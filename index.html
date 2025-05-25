@@ -12,7 +12,6 @@
       flex-direction: column;
       min-height: 100vh;
       justify-content: space-between;
-      align-items: center;
     }
 
     .header-block {
@@ -31,7 +30,7 @@
       width: 100%;
       background-color: #f1cd17;
       text-align: center;
-      padding: 20px 0 20px 0;
+      padding: 20px 0;
       font-size: 32px;
       color: #000;
       margin: 0;
@@ -39,19 +38,19 @@
 
     .nav-links {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 30px;
-      margin-top: 3px;
+      margin-top: 3px; /* ok. 3px odstępu pod dolnym paskiem */
       font-size: 20px;
       background-color: white;
-      width: 100%;
-      padding: 10px 0;
+      padding: 10px 20px 0 20px; /* usunięto padding bottom, żeby było blisko */
     }
 
     .nav-links a {
       text-decoration: none;
       color: #f1cd17;
       font-weight: bold;
+      line-height: 1.2;
     }
 
     .languages {
