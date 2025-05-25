@@ -8,14 +8,15 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: space-between;
       background-color: white;
     }
 
     .header-block {
       width: 100%;
-      background-color: #f1cd17;
-      text-align: center;
-      padding: 20px 10px;
     }
 
     .decor-line {
@@ -23,44 +24,68 @@
       height: 12px;
       background-color: #d4b518;
       margin: 0;
+      padding: 0;
     }
 
     .title-bar {
+      width: 100%;
+      background-color: #f1cd17;
+      text-align: center;
+      padding: 20px 0;
       font-size: 32px;
       font-weight: 700;
       color: #000;
-      margin: 10px 0;
+      margin: 0;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 40px;
       margin-top: 40px;
+      padding: 0 20px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
+      position: relative;
       font-size: 18px;
       font-weight: 600;
-      color: #000;
+      color: #f1cd17;
       text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease, color 0.3s ease;
+      padding-bottom: 3px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      margin-top: 10px;
     }
 
-    .nav-links a:hover {
-      border-color: #d4b518;
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #f1cd17;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
       color: #d4b518;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus::after {
+      width: 100%;
     }
 
     .languages {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 20px;
       padding: 20px;
+      flex-wrap: wrap;
     }
 
     .languages button {
@@ -86,13 +111,14 @@
     .lang-de { font-family: "Helvetica", sans-serif; }
     .lang-bg { font-family: "Times New Roman", serif; }
 
-    @media (max-width: 600px) {
-      .title-bar {
-        font-size: 24px;
+    @media screen and (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
       }
 
       .nav-links a {
-        font-size: 16px;
+        margin-top: 15px;
       }
     }
   </style>
@@ -101,14 +127,15 @@
   <div class="header-block">
     <div class="decor-line"></div>
     <h1 class="title-bar">AUDIO Mobile Guides</h1>
-    <div class="nav-links">
-      <a href="#">O nas</a>
-      <a href="#">Musée d'Orsay</a>
-      <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank">Go to AppStore</a>
-      <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank">Go to Google Play</a>
-    </div>
     <div class="decor-line"></div>
   </div>
+
+  <nav class="nav-links">
+    <a href="#">O nas</a>
+    <a href="#">Musée d'Orsay</a>
+    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer">Go to AppStore</a>
+    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer">Go to Google Play</a>
+  </nav>
 
   <div class="languages">
     <button onclick="setLanguage('en')">English</button>
