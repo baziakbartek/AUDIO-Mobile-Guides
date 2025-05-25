@@ -15,14 +15,22 @@
       align-items: center;
     }
 
-    h1 {
-      margin: 0;
-      padding: 20px 0;
+    .title-bar {
       width: 100%;
-      text-align: center;
-      font-size: 32px;
       background-color: #f1cd17;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 32px;
       color: #000;
+      margin: 0;
+    }
+
+    .decor-line {
+      width: 60%;
+      height: 6px;
+      background-color: #d4b518;
+      margin: 10px auto;
+      border-radius: 3px;
     }
 
     .guides {
@@ -35,7 +43,7 @@
     .guide {
       width: 100px;
       height: 100px;
-      background-color: white; /* zmienione z szarego */
+      background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,7 +67,6 @@
       cursor: pointer;
     }
 
-    /* Czcionki przykładowe (systemowe) */
     .lang-en { font-family: Arial, sans-serif; }
     .lang-pl { font-family: "Segoe UI", sans-serif; }
     .lang-uk { font-family: "Arial", sans-serif; }
@@ -69,7 +76,9 @@
   </style>
 </head>
 <body class="lang-en">
-  <h1>AUDIO Mobile Guides</h1>
+  <div class="decor-line"></div>
+  <h1 class="title-bar">AUDIO Mobile Guides</h1>
+  <div class="decor-line"></div>
 
   <div class="guides">
     <div class="guide">1</div>
