@@ -15,6 +15,20 @@
       align-items: center;
     }
 
+    .decor-line {
+      width: 60%;
+      height: 6px;
+      background-color: #d4b518;
+      border-radius: 3px;
+    }
+
+    .title-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .title-bar {
       width: 100%;
       background-color: #f1cd17;
@@ -22,15 +36,6 @@
       padding: 20px 0;
       font-size: 32px;
       color: #000;
-      margin: 0;
-    }
-
-    .decor-line {
-      width: 60%;
-      height: 6px;
-      background-color: #d4b518;
-      margin: 10px auto;
-      border-radius: 3px;
     }
 
     .guides {
@@ -76,9 +81,11 @@
   </style>
 </head>
 <body class="lang-en">
-  <div class="decor-line"></div>
-  <h1 class="title-bar">AUDIO Mobile Guides</h1>
-  <div class="decor-line"></div>
+  <div class="title-container">
+    <div class="decor-line"></div>
+    <h1 class="title-bar">AUDIO Mobile Guides</h1>
+    <div class="decor-line"></div>
+  </div>
 
   <div class="guides">
     <div class="guide">1</div>
