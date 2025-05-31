@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,6 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      justify-content: space-between;
       background-color: white;
     }
 
@@ -111,6 +110,21 @@
     .lang-de { font-family: "Helvetica", sans-serif; }
     .lang-bg { font-family: "Times New Roman", serif; }
 
+    .privacy-policy {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .privacy-policy h1, 
+    .privacy-policy h2 {
+      color: #222;
+    }
+
     @media screen and (max-width: 600px) {
       .nav-links {
         flex-direction: column;
@@ -124,7 +138,7 @@
     }
   </style>
 </head>
-<body class="lang-en">
+<body class="lang-pl">
   <div class="header-block">
     <div class="decor-line"></div>
     <h1 class="title-bar">AUDIO Mobile Guides</h1>
@@ -134,8 +148,8 @@
   <nav class="nav-links">
     <a href="#">O nas</a>
     <a href="#">Musée d'Orsay</a>
-    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer">Przejdź do AppStore</a>
-    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer">Przejdź do Google Play</a>
+    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer">AppStore</a>
+    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer">Google Play</a>
   </nav>
 
   <div class="languages">
@@ -147,6 +161,45 @@
     <button onclick="setLanguage('bg')">Български</button>
   </div>
 
+  <div class="privacy-policy">
+    <h1>Polityka Prywatności</h1>
+    <p>Data wejścia w życie: 31 maja 2025 r.</p>
+
+    <h2>1. Administrator danych</h2>
+    <p>Administratorem danych osobowych jest [Nazwa firmy lub osoby], z siedzibą przy [adres], kontakt: [email / telefon].</p>
+
+    <h2>2. Zakres zbieranych danych</h2>
+    <p>Zbieramy następujące dane osobowe: imię i nazwisko, adres e-mail, numer telefonu, adres IP, dane cookies oraz inne dane dobrowolnie podane przez użytkownika.</p>
+
+    <h2>3. Cel przetwarzania danych</h2>
+    <p>Dane są przetwarzane w celach: realizacji usług, kontaktu z użytkownikiem, marketingowych (za zgodą), statystycznych i analitycznych.</p>
+
+    <h2>4. Podstawa prawna przetwarzania</h2>
+    <p>Przetwarzanie odbywa się na podstawie: zgody użytkownika, realizacji umowy, obowiązków prawnych, uzasadnionego interesu administratora.</p>
+
+    <h2>5. Prawa użytkownika</h2>
+    <p>Użytkownik ma prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, wniesienia sprzeciwu oraz skargi do organu nadzorczego.</p>
+
+    <h2>6. Udostępnianie danych</h2>
+    <p>Dane mogą być udostępniane podmiotom przetwarzającym na zlecenie administratora (np. firmy IT, dostawcy hostingu), przy zachowaniu odpowiednich środków bezpieczeństwa.</p>
+
+    <h2>7. Przechowywanie danych</h2>
+    <p>Dane są przechowywane przez okres niezbędny do realizacji celów przetwarzania lub do momentu wycofania zgody.</p>
+
+    <h2>8. Pliki cookies</h2>
+    <p>Serwis wykorzystuje pliki cookies w celach funkcjonalnych, analitycznych i marketingowych. Użytkownik może zmienić ustawienia przeglądarki w zakresie obsługi cookies.</p>
+
+    <h2>9. Zmiany w polityce prywatności</h2>
+    <p>Administrator zastrzega sobie prawo do wprowadzania zmian w polityce prywatności. Nowe zapisy będą publikowane na tej stronie.</p>
+
+    <h2>10. Kontakt</h2>
+    <p>W przypadku pytań dotyczących polityki prywatności prosimy o kontakt na adres e-mail: [email kontaktowy].</p>
+  </div>
+
   <script>
     function setLanguage(lang) {
-      document.body.class
+      document.body.className = 'lang-' + lang;
+    }
+  </script>
+</body>
+</html>
