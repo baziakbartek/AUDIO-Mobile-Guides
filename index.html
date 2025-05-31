@@ -36,27 +36,43 @@
       font-weight: 700;
       color: #000;
       margin: 0;
+      transition: font-size 0.3s ease;
+    }
+
+    .title-bar.shrink {
+      font-size: 20px;
     }
 
     .nav-links {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin-top: 5px;
+      margin-top: 20px;
       padding: 0 20px;
       flex-wrap: wrap;
+      transition: all 0.3s ease;
     }
 
     .nav-links a {
       position: relative;
-      font-size: 18px;
+      font-size: 28px;
       font-weight: 600;
       color: #f1cd17;
       text-decoration: none;
       padding-bottom: 3px;
       cursor: pointer;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, font-size 0.3s ease;
       margin-top: 10px;
+    }
+
+    .nav-links a.hidden {
+      display: none;
+    }
+
+    .nav-links a.shrink {
+      font-size: 16px !important;
+      pointer-events: none;
+      color: #d4b518 !important;
     }
 
     .nav-links a::after {
@@ -89,9 +105,10 @@
       position: sticky;
       bottom: 0;
       background: white;
+      align-items: center;
     }
 
-    .languages button {
+    .languages button, .languages .back-button {
       padding: 10px 15px;
       font-size: 14px;
       cursor: pointer;
@@ -102,7 +119,7 @@
       transition: background-color 0.3s ease;
     }
 
-    .languages button:hover {
+    .languages button:hover, .languages .back-button:hover {
       background-color: #d4b518;
       color: white;
     }
@@ -142,11 +159,11 @@
     <div class="decor-line"></div>
   </div>
 
-  <nav class="nav-links">
-    <a href="#" onclick="togglePolicy()">O nas</a>
-    <a href="#">Musée d'Orsay</a>
-    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer">Przejdź do AppStore</a>
-    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer">Przejdź do Google Play</a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#" id="linkOnas" onclick="selectNav('onas', event)">O nas</a>
+    <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)">Musée d'Orsay</a>
+    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
+    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
   </nav>
 
   <div class="policy-content" id="policy">
@@ -199,16 +216,66 @@
     <button onclick="setLanguage('es')">Español</button>
     <button onclick="setLanguage('de')">Deutsch</button>
     <button onclick="setLanguage('bg')">Български</button>
+    <button class="back-button" onclick="resetView()">Wróć</button>
   </div>
 
   <script>
-    function togglePolicy() {
-      const policy = document.getElementById('policy');
-      policy.style.display = policy.style.display === 'block' ? 'none' : 'block';
+    const policy = document.getElementById('policy');
+    const navLinks = document.getElementById('navLinks');
+    const titleBar = document.querySelector('.title-bar');
+    const linkOnas = document.getElementById('linkOnas');
+    const linkOrsay = document.getElementById('linkOrsay');
+    const linkAppStore = document.getElementById('linkAppStore');
+    const linkGooglePlay = document.getElementById('linkGooglePlay');
+
+    function selectNav(selected, event) {
+      event.preventDefault();
+      policy.style.display = 'none';
+
+      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
+        link.classList.remove('hidden', 'shrink');
+        link.style.pointerEvents = 'auto';
+      });
+      titleBar.classList.remove('shrink');
+      titleBar.textContent = 'AUDIO Mobile Guides';
+
+      if (selected === 'onas') {
+        policy.style.display = 'block';
+        linkOrsay.classList.add('hidden');
+        linkAppStore.classList.add('hidden');
+        linkGooglePlay.classList.add('hidden');
+        linkOnas.classList.add('shrink');
+        titleBar.classList.add('shrink');
+        titleBar.textContent = 'O nas';
+      } else if (selected === 'orsay') {
+        linkOnas.classList.add('hidden');
+        linkAppStore.classList.add('hidden');
+        linkGooglePlay.classList.add('hidden');
+        linkOrsay.classList.add('shrink');
+        titleBar.classList.add('shrink');
+        titleBar.textContent = 'Musée d\'Orsay';
+        policy.style.display = 'none';
+      }
+    }
+
+    function resetView() {
+      policy.style.display = 'none';
+      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
+        link.classList.remove('hidden', 'shrink');
+        link.style.pointerEvents = 'auto';
+      });
+      titleBar.classList.remove('shrink');
+      titleBar.textContent = 'AUDIO Mobile Guides';
     }
 
     function setLanguage(lang) {
       document.body.className = 'lang-' + lang;
+    }
+
+    window.onload = () => {
+      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
+        link.style.fontSize = '28px';
+      });
     }
   </script>
 </body>
