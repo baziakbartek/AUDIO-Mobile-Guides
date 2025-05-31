@@ -39,10 +39,6 @@
       transition: font-size 0.3s ease;
     }
 
-    .title-bar.shrink {
-      font-size: 20px;
-    }
-
     .nav-links {
       display: flex;
       justify-content: center;
@@ -70,7 +66,7 @@
     }
 
     .nav-links a.shrink {
-      font-size: 16px !important;
+      font-size: 22px !important;
       pointer-events: none;
       color: #d4b518 !important;
     }
@@ -108,7 +104,7 @@
       align-items: center;
     }
 
-    .languages button, .languages .back-button {
+    .languages button {
       padding: 10px 15px;
       font-size: 14px;
       cursor: pointer;
@@ -117,11 +113,30 @@
       border-radius: 4px;
       font-weight: 600;
       transition: background-color 0.3s ease;
+      color: black;
     }
 
-    .languages button:hover, .languages .back-button:hover {
+    .languages button:hover {
       background-color: #d4b518;
       color: white;
+    }
+
+    .languages .back-button {
+      background-color: #333;
+      color: #f1cd17;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin-left: 10px;
+      user-select: none;
+    }
+
+    .languages .back-button:hover {
+      background-color: #555;
+      color: #fff;
     }
 
     .policy-content {
@@ -149,13 +164,18 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .languages .back-button {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="header-block">
     <div class="decor-line"></div>
-    <h1 class="title-bar">AUDIO Mobile Guides</h1>
+    <h1 class="title-bar">AUDIO Przewodniki mobilne</h1>
     <div class="decor-line"></div>
   </div>
 
@@ -221,12 +241,11 @@
 
   <script>
     const policy = document.getElementById('policy');
-    const navLinks = document.getElementById('navLinks');
-    const titleBar = document.querySelector('.title-bar');
     const linkOnas = document.getElementById('linkOnas');
     const linkOrsay = document.getElementById('linkOrsay');
     const linkAppStore = document.getElementById('linkAppStore');
     const linkGooglePlay = document.getElementById('linkGooglePlay');
+    const titleBar = document.querySelector('.title-bar');
 
     function selectNav(selected, event) {
       event.preventDefault();
@@ -236,8 +255,6 @@
         link.classList.remove('hidden', 'shrink');
         link.style.pointerEvents = 'auto';
       });
-      titleBar.classList.remove('shrink');
-      titleBar.textContent = 'AUDIO Mobile Guides';
 
       if (selected === 'onas') {
         policy.style.display = 'block';
@@ -245,16 +262,11 @@
         linkAppStore.classList.add('hidden');
         linkGooglePlay.classList.add('hidden');
         linkOnas.classList.add('shrink');
-        titleBar.classList.add('shrink');
-        titleBar.textContent = 'O nas';
       } else if (selected === 'orsay') {
         linkOnas.classList.add('hidden');
         linkAppStore.classList.add('hidden');
         linkGooglePlay.classList.add('hidden');
         linkOrsay.classList.add('shrink');
-        titleBar.classList.add('shrink');
-        titleBar.textContent = 'Musée d\'Orsay';
-        policy.style.display = 'none';
       }
     }
 
@@ -264,8 +276,6 @@
         link.classList.remove('hidden', 'shrink');
         link.style.pointerEvents = 'auto';
       });
-      titleBar.classList.remove('shrink');
-      titleBar.textContent = 'AUDIO Mobile Guides';
     }
 
     function setLanguage(lang) {
