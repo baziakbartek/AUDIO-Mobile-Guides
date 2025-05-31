@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Audio Mobile Guides</title>
+  <title>Audio Mobile Guides - Polityka Prywatności</title>
   <style>
     body {
       margin: 0;
@@ -13,6 +13,8 @@
       min-height: 100vh;
       justify-content: space-between;
       background-color: white;
+      color: #333;
+      line-height: 1.6;
     }
 
     .header-block {
@@ -39,17 +41,17 @@
       transition: font-size 0.3s ease;
     }
 
-    .nav-links {
+    nav.nav-links {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin-top: 20px;
+      margin: 20px 0;
       padding: 0 20px;
       flex-wrap: wrap;
       transition: all 0.3s ease;
     }
 
-    .nav-links a {
+    nav.nav-links a {
       position: relative;
       font-size: 28px;
       font-weight: 600;
@@ -61,17 +63,17 @@
       margin-top: 10px;
     }
 
-    .nav-links a.hidden {
+    nav.nav-links a.hidden {
       display: none;
     }
 
-    .nav-links a.shrink {
+    nav.nav-links a.shrink {
       font-size: 22px !important;
       pointer-events: none;
       color: #d4b518 !important;
     }
 
-    .nav-links a::after {
+    nav.nav-links a::after {
       content: '';
       position: absolute;
       left: 0;
@@ -82,14 +84,56 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a:focus {
+    nav.nav-links a:hover,
+    nav.nav-links a:focus {
       color: #d4b518;
     }
 
-    .nav-links a:hover::after,
-    .nav-links a:focus::after {
+    nav.nav-links a:hover::after,
+    nav.nav-links a:focus::after {
       width: 100%;
+    }
+
+    .policy-content {
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      padding: 0 20px 20px 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .policy-content h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .policy-content h3 {
+      font-size: 20px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #d4b518;
+    }
+
+    .policy-content p {
+      margin: 8px 0;
+    }
+
+    .policy-content p strong {
+      color: #000;
+    }
+
+    .policy-content a {
+      color: #d4b518;
+      text-decoration: none;
+    }
+
+    .policy-content a:hover,
+    .policy-content a:focus {
+      text-decoration: underline;
     }
 
     .languages {
@@ -102,6 +146,7 @@
       bottom: 0;
       background: white;
       align-items: center;
+      border-top: 1px solid #ddd;
     }
 
     .languages button {
@@ -139,24 +184,14 @@
       color: #fff;
     }
 
-    .policy-content {
-      display: none;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
-
     @media screen and (max-width: 600px) {
-      .nav-links {
+      nav.nav-links {
         flex-direction: column;
         align-items: center;
         gap: 20px;
       }
 
-      .nav-links a {
+      nav.nav-links a {
         margin-top: 15px;
       }
 
@@ -175,7 +210,7 @@
 <body>
   <div class="header-block">
     <div class="decor-line"></div>
-    <h1 class="title-bar">AUDIO Przewodniki mobilne</h1>
+    <h1 class="title-bar">POLITYKA PRYWATNOŚCI</h1>
     <div class="decor-line"></div>
   </div>
 
@@ -187,37 +222,36 @@
   </nav>
 
   <div class="policy-content" id="policy">
-    <h2>POLITYKA PRYWATNOŚCI</h2>
-    <p><strong>1. Definicje</strong></p>
-    <p>Administrator – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;<br>
-    Dane osobowe – wszystkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej, które dotyczą jej życia prywatnego, zawodowego lub publicznego, w tym m.in. imię, nazwisko, adres, adres e-mail, numer telefonu, identyfikatory elektroniczne, dane lokalizacyjne, IP;<br>
-    Cookies – pliki tekstowe przechowywane na urządzeniu użytkownika, które umożliwiają rozpoznanie użytkownika;<br>
-    Profilowanie – przetwarzanie danych osobowych w celu oceny niektórych cech osobowych użytkownika, w tym preferencji, zainteresowań, zachowań;<br>
-    RODO – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych;</p>
+    <h3>1. Definicje</h3>
+    <p><strong>Administrator</strong> – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;</p>
+    <p><strong>Dane osobowe</strong> – wszystkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej, które dotyczą jej życia prywatnego, zawodowego lub publicznego, w tym m.in. imię, nazwisko, adres, adres e-mail, numer telefonu, identyfikatory elektroniczne, dane lokalizacyjne, IP;</p>
+    <p><strong>Cookies</strong> – pliki tekstowe przechowywane na urządzeniu użytkownika, które umożliwiają rozpoznanie użytkownika;</p>
+    <p><strong>Profilowanie</strong> – przetwarzanie danych osobowych w celu oceny niektórych cech osobowych użytkownika, w tym preferencji, zainteresowań, zachowań;</p>
+    <p><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych;</p>
 
-    <p><strong>2. Informacje o Administratorze</strong></p>
+    <h3>2. Informacje o Administratorze</h3>
     <p>Administratorem Twoich Danych osobowych w związku z korzystaniem przez Ciebie z Usług jest Bartłomiej Baziak F16.<br>
     Kontakt: ul. Chodkiewicza 4/12A, 31-532 Kraków, e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a></p>
 
-    <p><strong>3. Dane Inspektora Ochrony Danych</strong></p>
-    <p>Inspektor Ochrony Danych można kontaktować pod adresem e-mail: we@audiomobileguides.com.</p>
+    <h3>3. Dane Inspektora Ochrony Danych</h3>
+    <p>Inspektor Ochrony Danych można kontaktować pod adresem e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a>.</p>
 
-    <p><strong>4. Jakie dane przetwarzamy?</strong></p>
+    <h3>4. Jakie dane przetwarzamy?</h3>
     <p>Przetwarzamy dane podane przez Ciebie w formularzach kontaktowych oraz dane techniczne, takie jak adres IP, pliki cookies.</p>
 
-    <p><strong>5. Cele i podstawy prawne przetwarzania danych</strong></p>
+    <h3>5. Cele i podstawy prawne przetwarzania danych</h3>
     <p>Dane przetwarzamy w celu realizacji zamówień, kontaktu z użytkownikiem, analizy statystycznej oraz marketingu, zgodnie z odpowiednimi przepisami prawa.</p>
 
-    <p><strong>6. Odbiorcy danych</strong></p>
+    <h3>6. Odbiorcy danych</h3>
     <p>Twoje dane mogą być przekazywane podmiotom świadczącym usługi IT, hostingowe, marketingowe oraz innym podmiotom działającym na nasze zlecenie, które zapewniają odpowiednie zabezpieczenia.</p>
 
-    <p><strong>7. Prawa użytkownika</strong></p>
+    <h3>7. Prawa użytkownika</h3>
     <p>Przysługuje Ci prawo dostępu do swoich danych, ich poprawiania, usunięcia, ograniczenia przetwarzania, przenoszenia, sprzeciwu oraz prawo do wniesienia skargi do organu nadzorczego.</p>
 
-    <p><strong>8. Pliki cookies</strong></p>
+    <h3>8. Pliki cookies</h3>
     <p>Wykorzystujemy pliki cookies w celach technicznych, analitycznych oraz marketingowych.</p>
 
-    <p><strong>9. Wtyczki społecznościowe</strong></p>
+    <h3>9. Wtyczki społecznościowe</h3>
     <p>Na naszej stronie mogą występować wtyczki społecznościowe, takie jak Facebook. Korzystanie z nich wiąże się z polityką prywatności tych serwisów.<br>
     <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Zobacz politykę Facebooka</a></p>
 
