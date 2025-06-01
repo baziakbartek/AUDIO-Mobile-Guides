@@ -2,324 +2,160 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Audio Mobile Guides - Polityka Prywatności</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polityka Prywatności | AUDIO-Mobile-Guides</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: space-between;
-      background-color: white;
-      color: #333;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
-    }
-
-    .header-block {
-      width: 100%;
-    }
-
-    .decor-line {
-      width: 100%;
-      height: 12px;
-      background-color: #d4b518;
-      margin: 0;
-      padding: 0;
-    }
-
-    .title-bar {
-      width: 100%;
-      background-color: #f1cd17;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 32px;
-      font-weight: 700;
-      color: #000;
-      margin: 0;
-      transition: font-size 0.3s ease;
-    }
-
-    nav.nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 20px 0;
-      padding: 0 20px;
-      flex-wrap: wrap;
-      transition: all 0.3s ease;
-    }
-
-    nav.nav-links a {
-      position: relative;
-      font-size: 28px;
-      font-weight: 600;
-      color: #f1cd17;
-      text-decoration: none;
-      padding-bottom: 3px;
-      cursor: pointer;
-      transition: color 0.3s ease, font-size 0.3s ease;
-      margin-top: 10px;
-    }
-
-    nav.nav-links a.hidden {
-      display: none;
-    }
-
-    nav.nav-links a.shrink {
-      font-size: 22px !important;
-      pointer-events: none;
-      color: #d4b518 !important;
-    }
-
-    nav.nav-links a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background-color: #f1cd17;
-      transition: width 0.3s ease;
-    }
-
-    nav.nav-links a:hover,
-    nav.nav-links a:focus {
-      color: #d4b518;
-    }
-
-    nav.nav-links a:hover::after,
-    nav.nav-links a:focus::after {
-      width: 100%;
-    }
-
-    .policy-content {
-      max-width: 900px;
-      margin: 0 auto 30px auto;
-      padding: 0 20px 20px 20px;
-      font-size: 16px;
+      margin: 40px;
+      background-color: #f9f9f9;
       color: #333;
     }
-
-    .policy-content h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: #000;
+    h1, h2 {
+      color: #0d3b66;
     }
-
-    .policy-content h3 {
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: #d4b518;
+    ul {
+      padding-left: 20px;
     }
-
-    .policy-content p {
-      margin: 8px 0;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #fff;
     }
-
-    .policy-content p strong {
-      color: #000;
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
     }
-
-    .policy-content a {
-      color: #d4b518;
+    th {
+      background-color: #e6f0fa;
+    }
+    a {
+      color: #0d3b66;
       text-decoration: none;
     }
-
-    .policy-content a:hover,
-    .policy-content a:focus {
+    a:hover {
       text-decoration: underline;
     }
-
-    .languages {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-      position: sticky;
-      bottom: 0;
+    section {
       background: white;
-      align-items: center;
-      border-top: 1px solid #ddd;
-    }
-
-    .languages button {
-      padding: 10px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      background: #f1cd17;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      color: black;
-    }
-
-    .languages button:hover {
-      background-color: #d4b518;
-      color: white;
-    }
-
-    .languages .back-button {
-      background-color: #333;
-      color: #f1cd17;
-      font-weight: 700;
-      border-radius: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      margin-left: 10px;
-      user-select: none;
-    }
-
-    .languages .back-button:hover {
-      background-color: #555;
-      color: #fff;
-    }
-
-    @media screen and (max-width: 600px) {
-      nav.nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
-
-      nav.nav-links a {
-        margin-top: 15px;
-      }
-
-      .languages {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .languages .back-button {
-        margin-left: 0;
-        margin-top: 10px;
-      }
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
 <body>
-  <div class="header-block">
-    <div class="decor-line"></div>
-    <h1 class="title-bar">POLITYKA PRYWATNOŚCI</h1>
-    <div class="decor-line"></div>
-  </div>
 
-  <nav class="nav-links" id="navLinks">
-    <a href="#" id="linkOnas" onclick="selectNav('onas', event)">O nas</a>
-    <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)">Musée d'Orsay</a>
-    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
-    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
-  </nav>
+  <section id="o-nas">
+    <h1>AUDIO-Mobile-Guides – O nas</h1>
 
-  <div class="policy-content" id="policy">
-    <h2>O nas</h2>
-    <p>Audio Mobile Guides to firma specjalizująca się w tworzeniu mobilnych przewodników audio po najważniejszych atrakcjach turystycznych na całym świecie. Naszym celem jest dostarczenie użytkownikom łatwego i komfortowego dostępu do wiedzy o miejscach, które odwiedzają, za pomocą nowoczesnych technologii i wysokiej jakości nagrań audio.</p>
-    <p>Współpracujemy z ekspertami i lokalnymi przewodnikami, aby zapewnić autentyczne i interesujące treści, które wzbogacają doświadczenia turystyczne. Nasze aplikacje są dostępne na popularnych platformach mobilnych, dzięki czemu każdy może mieć profesjonalnego przewodnika w swoim smartfonie.</p>
-    <p>Zależy nam na ochronie prywatności naszych użytkowników i transparentności w przetwarzaniu danych osobowych, dlatego szczegółowo opisujemy zasady ochrony danych w naszej polityce prywatności.</p>
+    <h2>1. Definicje</h2>
+    <ul>
+      <li><strong>Administrator</strong> – podmiot, który decyduje o celach i sposobach przetwarzania Twoich Danych osobowych.</li>
+      <li><strong>Dane osobowe</strong> – wszelkie informacje pozwalające na bezpośrednią identyfikację osoby fizycznej (np. imię, nazwisko, adres e-mail, numer telefonu).</li>
+      <li><strong>Polityka</strong> – niniejszy dokument, określający zasady ochrony Danych osobowych.</li>
+      <li><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych.</li>
+      <li><strong>Usługa</strong> – dostępna pod adresem <a href="https://audiomobileguides.com">https://audiomobileguides.com</a></li>
+    </ul>
 
-    <h3>1. Definicje</h3>
-    <p><strong>Administrator</strong> – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;</p>
-    <p><strong>Dane osobowe</strong> – wszystkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej, które dotyczą jej życia prywatnego, zawodowego lub publicznego, w tym m.in. imię, nazwisko, adres, adres e-mail, numer telefonu, identyfikatory elektroniczne, dane lokalizacyjne, IP;</p>
-    <p><strong>Cookies</strong> – pliki tekstowe przechowywane na urządzeniu użytkownika, które umożliwiają rozpoznanie użytkownika;</p>
-    <p><strong>Profilowanie</strong> – przetwarzanie danych osobowych w celu oceny niektórych cech osobowych użytkownika, w tym preferencji, zainteresowań, zachowań;</p>
-    <p><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych;</p>
+    <h2>2. Informacje o Administratorze</h2>
+    <p>
+      Administratorem Twoich danych osobowych jest Bartłomiej Barzik F.H.U. z siedzibą przy ul. Chodkiewicza 4/123, 31-532 Kraków.<br>
+      Adres e-mail do kontaktu: <a href="mailto:wedlug@audiomobileguides.com">wedlug@audiomobileguides.com</a>
+    </p>
 
-    <h3>2. Informacje o Administratorze</h3>
-    <p>Administratorem Twoich Danych osobowych w związku z korzystaniem przez Ciebie z Usług jest Bartłomiej Baziak F16.<br>
-    Kontakt: ul. Chodkiewicza 4/12A, 31-532 Kraków, e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a></p>
+    <h2>3. Dane Inspektora Ochrony Danych</h2>
+    <p>
+      We wszelkich sprawach dotyczących przetwarzania danych osobowych oraz korzystania z przysługujących Ci praw związanych z tym przetwarzaniem możesz kontaktować się z Inspektorem Ochrony Danych:<br>
+      Adres: Bartłomiej Barzik F.H.U., Chodkiewicza 4/123, 31-532 Kraków<br>
+      E-mail: <a href="mailto:wedlug@audiomobileguides.com">wedlug@audiomobileguides.com</a>
+    </p>
 
-    <h3>3. Dane Inspektora Ochrony Danych</h3>
-    <p>Inspektor Ochrony Danych można kontaktować pod adresem e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a>.</p>
+    <h2>4. Jakie dane przetwarzamy?</h2>
+    <p>
+      Przetwarzamy dane osobowe, które podajesz, podczas korzystania z naszych usług lub kontaktu, w szczególności: imię i nazwisko, adres e-mail, numer telefonu oraz inne dane identyfikacyjne, lokalizacyjne i techniczne (np. adres IP, dane o urządzeniu).<br>
+      Dane mogą być zbierane automatycznie za pośrednictwem plików cookies lub dobrowolnie podawane przez użytkownika.
+    </p>
 
-    <h3>4. Jakie dane przetwarzamy?</h3>
-    <p>Przetwarzamy dane podane przez Ciebie w formularzach kontaktowych oraz dane techniczne, takie jak adres IP, pliki cookies.</p>
+    <h2>5. W jakim celu i na jakiej podstawie przetwarzamy Twoje dane?</h2>
+    <p>Przetwarzamy dane w celu:</p>
+    <ul>
+      <li>realizacji Usługi,</li>
+      <li>kontaktowania się z użytkownikiem,</li>
+      <li>zapewnienia bezpieczeństwa systemów informatycznych,</li>
+      <li>przestrzegania obowiązujących przepisów prawa,</li>
+      <li>marketingu bezpośredniego, jeśli wyrazisz zgodę.</li>
+    </ul>
+    <p>Podstawą prawną przetwarzania jest:</p>
+    <ul>
+      <li>niezbędność do wykonania umowy,</li>
+      <li>Twoja zgoda,</li>
+      <li>prawnie uzasadniony interes Administratora,</li>
+      <li>obowiązek prawny.</li>
+    </ul>
 
-    <h3>5. Cele i podstawy prawne przetwarzania danych</h3>
-    <p>Dane przetwarzamy w celu realizacji zamówień, kontaktu z użytkownikiem, analizy statystycznej oraz marketingu, zgodnie z odpowiednimi przepisami prawa.</p>
+    <h2>6. Odbiorcy danych</h2>
+    <p>Dane mogą być przekazywane następującym kategoriom odbiorców:</p>
 
-    <h3>6. Odbiorcy danych</h3>
-    <p>Twoje dane mogą być przekazywane podmiotom świadczącym usługi IT, hostingowe, marketingowe oraz innym podmiotom działającym na nasze zlecenie, które zapewniają odpowiednie zabezpieczenia.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Kategoria odbiorcy</th>
+          <th>Cel udostępnienia danych</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dostawcy usług IT</td>
+          <td>Zapewnienie działania systemu i infrastruktury technicznej</td>
+        </tr>
+        <tr>
+          <td>Firmy hostingowe</td>
+          <td>Przechowywanie danych w chmurze</td>
+        </tr>
+        <tr>
+          <td>Dostawcy narzędzi analitycznych</td>
+          <td>Analiza korzystania z Usług</td>
+        </tr>
+        <tr>
+          <td>Organy publiczne</td>
+          <td>W przypadkach wymaganych przepisami prawa</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <h3>7. Prawa użytkownika</h3>
-    <p>Przysługuje Ci prawo dostępu do swoich danych, ich poprawiania, usunięcia, ograniczenia przetwarzania, przenoszenia, sprzeciwu oraz prawo do wniesienia skargi do organu nadzorczego.</p>
+    <p><strong>Uwaga:</strong> Dane osobowe nie będą przekazywane poza Europejski Obszar Gospodarczy (EOG) ani do organizacji międzynarodowych.</p>
 
-    <h3>8. Pliki cookies</h3>
-    <p>Wykorzystujemy pliki cookies w celach technicznych, analitycznych oraz marketingowych.</p>
+    <h2>7. Twoje prawa</h2>
+    <p>Masz prawo do:</p>
+    <ul>
+      <li>dostępu do swoich danych,</li>
+      <li>ich sprostowania,</li>
+      <li>usunięcia,</li>
+      <li>ograniczenia przetwarzania,</li>
+      <li>przenoszenia danych,</li>
+      <li>wniesienia sprzeciwu wobec przetwarzania danych,</li>
+      <li>złożenia skargi do organu nadzorczego.</li>
+    </ul>
 
-    <h3>9. Wtyczki społecznościowe</h3>
-    <p>Na naszej stronie mogą występować wtyczki społecznościowe, takie jak Facebook. Korzystanie z nich wiąże się z polityką prywatności tych serwisów.<br>
-    <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Zobacz politykę Facebooka</a></p>
+    <h2>8. Okres przechowywania danych</h2>
+    <p>
+      Dane będą przechowywane przez okres niezbędny do realizacji celów, dla których zostały zebrane, lub do czasu wycofania zgody, jeśli podstawą przetwarzania była zgoda.<br>
+      Dane mogą być przechowywane dłużej w przypadkach wynikających z przepisów prawa (np. podatkowych).
+    </p>
 
-    <p><em>Informujemy, że ograniczenia bądź wyłączenia stosowania plików cookies i innych podobnych technologii mogą wpłynąć na niektóre funkcjonalności dostępne w naszych serwisach.</em></p>
-  </div>
+    <h2>9. Pliki cookies</h2>
+    <p>
+      Strona korzysta z plików cookies w celach statystycznych, analitycznych i funkcjonalnych. Możesz zarządzać ustawieniami cookies w swojej przeglądarce.
+    </p>
 
-  <div class="languages">
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('pl')">Polski</button>
-    <button onclick="setLanguage('uk')">Українська</button>
-    <button onclick="setLanguage('es')">Español</button>
-    <button onclick="setLanguage('de')">Deutsch</button>
-    <button onclick="setLanguage('bg')">Български</button>
-    <button class="back-button" onclick="resetView()">Wróć</button>
-  </div>
+    <h2>10. Zmiany w polityce</h2>
+    <p>
+      Polityka prywatności może być aktualizowana. Wszelkie zmiany będą publikowane na tej stronie z odpowiednim wyprzedzeniem.
+    </p>
+  </section>
 
-  <script>
-    const policy = document.getElementById('policy');
-    const linkOnas = document.getElementById('linkOnas');
-    const linkOrsay = document.getElementById('linkOrsay');
-    const linkAppStore = document.getElementById('linkAppStore');
-    const linkGooglePlay = document.getElementById('linkGooglePlay');
-
-    function selectNav(selected, event) {
-      event.preventDefault();
-      policy.style.display = 'none';
-
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.classList.remove('hidden', 'shrink');
-        link.style.pointerEvents = 'auto';
-      });
-
-      if (selected === 'onas') {
-        policy.style.display = 'block';
-        linkOrsay.classList.add('hidden');
-        linkAppStore.classList.add('hidden');
-        linkGooglePlay.classList.add('hidden');
-        linkOnas.classList.add('shrink');
-      } else if (selected === 'orsay') {
-        linkOnas.classList.add('hidden');
-        linkAppStore.classList.add('hidden');
-        linkGooglePlay.classList.add('hidden');
-        linkOrsay.classList.add('shrink');
-      }
-    }
-
-    function resetView() {
-      policy.style.display = 'none';
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.classList.remove('hidden', 'shrink');
-        link.style.pointerEvents = 'auto';
-      });
-    }
-
-    function setLanguage(lang) {
-      document.body.className = 'lang-' + lang;
-    }
-
-    window.onload = () => {
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.style.fontSize = '28px';
-      });
-    }
-  </script>
 </body>
 </html>
