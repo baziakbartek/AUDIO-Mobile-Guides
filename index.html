@@ -16,9 +16,11 @@
       color: #333;
       line-height: 1.6;
     }
+
     .header-block {
       width: 100%;
     }
+
     .decor-line {
       width: 100%;
       height: 12px;
@@ -26,6 +28,7 @@
       margin: 0;
       padding: 0;
     }
+
     .title-bar {
       width: 100%;
       background-color: #f1cd17;
@@ -37,6 +40,7 @@
       margin: 0;
       transition: font-size 0.3s ease;
     }
+
     nav.nav-links {
       display: flex;
       justify-content: center;
@@ -46,6 +50,7 @@
       flex-wrap: wrap;
       transition: all 0.3s ease;
     }
+
     nav.nav-links a {
       position: relative;
       font-size: 28px;
@@ -57,14 +62,17 @@
       transition: color 0.3s ease, font-size 0.3s ease;
       margin-top: 10px;
     }
+
     nav.nav-links a.hidden {
       display: none;
     }
+
     nav.nav-links a.shrink {
       font-size: 22px !important;
       pointer-events: none;
       color: #d4b518 !important;
     }
+
     nav.nav-links a::after {
       content: '';
       position: absolute;
@@ -75,14 +83,17 @@
       background-color: #f1cd17;
       transition: width 0.3s ease;
     }
+
     nav.nav-links a:hover,
     nav.nav-links a:focus {
       color: #d4b518;
     }
+
     nav.nav-links a:hover::after,
     nav.nav-links a:focus::after {
       width: 100%;
     }
+
     .policy-content {
       max-width: 900px;
       margin: 0 auto 30px auto;
@@ -90,34 +101,41 @@
       font-size: 16px;
       color: #333;
     }
-    .policy-content h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: #000;
+
+    .policy-content h1, .policy-content h2, .policy-content h3 {
+      color: #0d3b66;
     }
-    .policy-content h3 {
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: #d4b518;
+
+    .policy-content ul {
+      padding-left: 20px;
     }
-    .policy-content p {
-      margin: 8px 0;
+
+    .policy-content table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #fff;
     }
-    .policy-content p strong {
-      color: #000;
+
+    .policy-content th, .policy-content td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
     }
+
+    .policy-content th {
+      background-color: #e6f0fa;
+    }
+
     .policy-content a {
-      color: #d4b518;
+      color: #0d3b66;
       text-decoration: none;
     }
+
     .policy-content a:hover,
     .policy-content a:focus {
       text-decoration: underline;
     }
+
     .languages {
       display: flex;
       justify-content: center;
@@ -130,6 +148,7 @@
       align-items: center;
       border-top: 1px solid #ddd;
     }
+
     .languages button {
       padding: 10px 15px;
       font-size: 14px;
@@ -141,10 +160,12 @@
       transition: background-color 0.3s ease;
       color: black;
     }
+
     .languages button:hover {
       background-color: #d4b518;
       color: white;
     }
+
     .languages .back-button {
       background-color: #333;
       color: #f1cd17;
@@ -157,65 +178,32 @@
       margin-left: 10px;
       user-select: none;
     }
+
     .languages .back-button:hover {
       background-color: #555;
       color: #fff;
     }
+
     @media screen and (max-width: 600px) {
       nav.nav-links {
         flex-direction: column;
         align-items: center;
         gap: 20px;
       }
+
       nav.nav-links a {
         margin-top: 15px;
       }
+
       .languages {
         flex-direction: column;
         align-items: center;
       }
+
       .languages .back-button {
         margin-left: 0;
         margin-top: 10px;
       }
-    }
-    #o-nas {
-      max-width: 900px;
-      margin: 0 auto 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      font-family: Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
-      display: none;
-    }
-    #o-nas h1, #o-nas h2 {
-      color: #0d3b66;
-    }
-    #o-nas ul {
-      padding-left: 20px;
-    }
-    #o-nas table {
-      border-collapse: collapse;
-      width: 100%;
-      background-color: #fff;
-    }
-    #o-nas th, #o-nas td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
-    #o-nas th {
-      background-color: #e6f0fa;
-    }
-    #o-nas a {
-      color: #0d3b66;
-      text-decoration: none;
-    }
-    #o-nas a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -234,91 +222,136 @@
   </nav>
 
   <div class="policy-content" id="policy">
-    <h2>O nas</h2>
-    <p>Audio Mobile Guides to firma specjalizująca się w tworzeniu mobilnych przewodników audio po najważniejszych atrakcjach turystycznych na całym świecie. Naszym celem jest dostarczenie użytkownikom łatwego i komfortowego dostępu do wiedzy o miejscach, które odwiedzają, za pomocą nowoczesnych technologii i wysokiej jakości nagrań audio.</p>
-    <p>Współpracujemy z ekspertami i lokalnymi przewodnikami, aby zapewnić autentyczne i interesujące treści, które wzbogacają doświadczenia turystyczne. Nasze aplikacje są dostępne na popularnych platformach mobilnych, dzięki czemu każdy może mieć profesjonalnego przewodnika w swoim smartfonie.</p>
-    <p>Zależy nam na ochronie prywatności naszych użytkowników i transparentności w przetwarzaniu danych osobowych, dlatego szczegółowo opisujemy zasady ochrony danych w naszej polityce prywatności.</p>
+    <h1>AUDIO-Mobile-Guides – O nas</h1>
 
-    <h3>1. Definicje</h3>
-    <p><strong>Administrator</strong> – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;</p>
-    <p><strong>Dane osobowe</strong> – wszystkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej, które dotyczą jej życia prywatnego, zawodowego lub publicznego;</p>
-    <p><strong>Przetwarzanie</strong> – każde operacje wykonywane na danych osobowych, takie jak zbieranie, przechowywanie, używanie, ujawnianie, itp.;</p>
-
-    <h3>2. Administrator danych osobowych</h3>
-    <p>Administratorem Twoich danych osobowych jest Audio Mobile Guides, z siedzibą pod adresem: ul. Przykładowa 123, 00-001 Warszawa, Polska.</p>
-    <p>Możesz skontaktować się z nami pod adresem e-mail: <a href="mailto:kontakt@audiomobileguides.pl">kontakt@audiomobileguides.pl</a> lub telefonicznie: +48 123 456 789.</p>
-
-    <h3>3. Cele i podstawy prawne przetwarzania danych</h3>
-    <p>Twoje dane osobowe przetwarzamy w celu:</p>
+    <h2>1. Definicje</h2>
     <ul>
-      <li>zapewnienia działania naszych aplikacji i usług,</li>
-      <li>realizacji umowy zawartej z użytkownikiem,</li>
-      <li>marketingu bezpośredniego naszych produktów i usług, o ile wyrazisz na to zgodę,</li>
-      <li>analizy i poprawy jakości usług.</li>
+      <li><strong>Administrator</strong> – podmiot, który decyduje o celach i sposobach przetwarzania Twoich Danych osobowych.</li>
+      <li><strong>Dane osobowe</strong> – wszelkie informacje pozwalające na bezpośrednią identyfikację osoby fizycznej (np. imię, nazwisko, adres e-mail, numer telefonu).</li>
+      <li><strong>Polityka</strong> – niniejszy dokument, określający zasady ochrony Danych osobowych.</li>
+      <li><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych.</li>
+      <li><strong>Usługa</strong> – dostępna pod adresem <a href="https://audiomobileguides.com">https://audiomobileguides.com</a></li>
     </ul>
 
-    <h3>4. Odbiorcy danych</h3>
-    <p>Twoje dane mogą być udostępniane podmiotom współpracującym z nami w zakresie realizacji usług, w tym dostawcom usług IT, podmiotom świadczącym usługi hostingowe, marketingowe oraz obsługi klienta.</p>
+    <h2>2. Informacje o Administratorze</h2>
+    <p>
+      Administratorem Twoich danych osobowych jest Bartłomiej Barzik F.H.U. z siedzibą przy ul. Chodkiewicza 4/123, 31-532 Kraków.<br>
+      Adres e-mail do kontaktu: <a href="mailto:wedlug@audiomobileguides.com">wedlug@audiomobileguides.com</a>
+    </p>
 
-    <h3>5. Okres przechowywania danych</h3>
-    <p>Twoje dane osobowe będą przechowywane przez okres niezbędny do realizacji celów, dla których zostały zebrane, zgodnie z obowiązującymi przepisami prawa.</p>
+    <h2>3. Dane Inspektora Ochrony Danych</h2>
+    <p>
+      We wszelkich sprawach dotyczących przetwarzania danych osobowych oraz korzystania z przysługujących Ci praw związanych z tym przetwarzaniem możesz kontaktować się z Inspektorem Ochrony Danych:<br>
+      Adres: Bartłomiej Barzik F.H.U., Chodkiewicza 4/123, 31-532 Kraków<br>
+      E-mail: <a href="mailto:wedlug@audiomobileguides.com">wedlug@audiomobileguides.com</a>
+    </p>
 
-    <h3>6. Prawa użytkownika</h3>
-    <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz prawo do wniesienia sprzeciwu wobec przetwarzania danych na cele marketingowe.</p>
+    <h2>4. Jakie dane przetwarzamy?</h2>
+    <p>
+      Przetwarzamy dane osobowe, które podajesz, podczas korzystania z naszych usług lub kontaktu, w szczególności: imię i nazwisko, adres e-mail, numer telefonu oraz inne dane identyfikacyjne, lokalizacyjne i techniczne (np. adres IP, dane o urządzeniu).<br>
+      Dane mogą być zbierane automatycznie za pośrednictwem plików cookies lub dobrowolnie podawane przez użytkownika.
+    </p>
 
-    <h3>7. Pliki Cookies</h3>
-    <p>Nasza strona i aplikacje używają plików cookies w celu poprawy jakości usług, analizy ruchu oraz personalizacji treści. Możesz zarządzać ustawieniami cookies w swojej przeglądarce.</p>
+    <h2>5. W jakim celu i na jakiej podstawie przetwarzamy Twoje dane?</h2>
+    <p>Przetwarzamy dane w celu:</p>
+    <ul>
+      <li>realizacji Usługi,</li>
+      <li>kontaktowania się z użytkownikiem,</li>
+      <li>zapewnienia bezpieczeństwa systemów informatycznych,</li>
+      <li>przestrzegania obowiązujących przepisów prawa,</li>
+      <li>marketingu bezpośredniego, jeśli wyrazisz zgodę.</li>
+    </ul>
+    <p>Podstawą prawną przetwarzania jest:</p>
+    <ul>
+      <li>niezbędność do wykonania umowy,</li>
+      <li>Twoja zgoda,</li>
+      <li>prawnie uzasadniony interes Administratora,</li>
+      <li>obowiązek prawny.</li>
+    </ul>
 
-    <h3>8. Zmiany w polityce prywatności</h3>
-    <p>Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej polityce prywatności. O wszelkich zmianach będziemy informować na naszej stronie internetowej.</p>
+    <h2>6. Odbiorcy danych</h2>
+    <p>Dane mogą być przekazywane następującym kategoriom odbiorców:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Kategoria odbiorcy</th>
+          <th>Cel przekazania danych</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dostawcy usług IT</td>
+          <td>Zarządzanie stroną internetową, hostingiem, pocztą e-mail</td>
+        </tr>
+        <tr>
+          <td>Podmioty świadczące usługi marketingowe</td>
+          <td>Wysyłka newsletterów, kampanie reklamowe</td>
+        </tr>
+        <tr>
+          <td>Organy publiczne</td>
+          <td>Realizacja obowiązków prawnych</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="languages">
-    <button onclick="switchLanguage('pl')">Polski</button>
-    <button onclick="switchLanguage('en')">English</button>
-    <button onclick="switchLanguage('de')">Deutsch</button>
-    <button onclick="switchLanguage('fr')">Français</button>
-    <button class="back-button" onclick="goBack()">Powrót</button>
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('pl')">Polski</button>
+    <button onclick="setLanguage('uk')">Українська</button>
+    <button onclick="setLanguage('es')">Español</button>
+    <button onclick="setLanguage('de')">Deutsch</button>
+    <button onclick="setLanguage('bg')">Български</button>
+    <button class="back-button" onclick="resetView()">Wróć</button>
   </div>
 
   <script>
-    const contents = {
-      pl: {
-        title: 'POLITYKA PRYWATNOŚCI',
-        aboutUsTitle: 'O nas',
-        aboutUsText: `Audio Mobile Guides to firma specjalizująca się w tworzeniu mobilnych przewodników audio po najważniejszych atrakcjach turystycznych na całym świecie. Naszym celem jest dostarczenie użytkownikom łatwego i komfortowego dostępu do wiedzy o miejscach, które odwiedzają, za pomocą nowoczesnych technologii i wysokiej jakości nagrań audio.
+    const policy = document.getElementById('policy');
+    const linkOnas = document.getElementById('linkOnas');
+    const linkOrsay = document.getElementById('linkOrsay');
+    const linkAppStore = document.getElementById('linkAppStore');
+    const linkGooglePlay = document.getElementById('linkGooglePlay');
 
-Współpracujemy z ekspertami i lokalnymi przewodnikami, aby zapewnić autentyczne i interesujące treści, które wzbogacają doświadczenia turystyczne. Nasze aplikacje są dostępne na popularnych platformach mobilnych, dzięki czemu każdy może mieć profesjonalnego przewodnika w swoim smartfonie.
-
-Zależy nam na ochronie prywatności naszych użytkowników i transparentności w przetwarzaniu danych osobowych, dlatego szczegółowo opisujemy zasady ochrony danych w naszej polityce prywatności.`,
-        nav: ['O nas', 'Musée d\'Orsay', 'Przejdź do AppStore', 'Przejdź do Google Play']
-      }
-    };
-
-    function switchLanguage(lang) {
-      if (contents[lang]) {
-        document.querySelector('.title-bar').textContent = contents[lang].title;
-        document.getElementById('policy').querySelector('h2').textContent = contents[lang].aboutUsTitle;
-        document.getElementById('policy').querySelector('p').textContent = contents[lang].aboutUsText;
-        const navLinks = document.querySelectorAll('#navLinks a');
-        navLinks[0].textContent = contents[lang].nav[0];
-        navLinks[1].textContent = contents[lang].nav[1];
-        navLinks[2].textContent = contents[lang].nav[2];
-        navLinks[3].textContent = contents[lang].nav[3];
-      }
-    }
-
-    function selectNav(section, event) {
+    function selectNav(selected, event) {
       event.preventDefault();
-      if (section === 'onas') {
-        document.getElementById('policy').style.display = 'block';
-      } else {
-        alert('Sekcja "' + section + '" w budowie.');
+      policy.style.display = 'none';
+
+      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
+        link.classList.remove('hidden', 'shrink');
+        link.style.pointerEvents = 'auto';
+      });
+
+      if (selected === 'onas') {
+        policy.style.display = 'block';
+        linkOrsay.classList.add('hidden');
+        linkAppStore.classList.add('hidden');
+        linkGooglePlay.classList.add('hidden');
+        linkOnas.classList.add('shrink');
+      } else if (selected === 'orsay') {
+        linkOnas.classList.add('hidden');
+        linkAppStore.classList.add('hidden');
+        linkGooglePlay.classList.add('hidden');
+        linkOrsay.classList.add('shrink');
       }
     }
 
-    function goBack() {
-      history.back();
+    function resetView() {
+      policy.style.display = 'none';
+      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
+        link.classList.remove('hidden', 'shrink');
+        link.style.pointerEvents = 'auto';
+      });
+    }
+
+    function setLanguage(lang) {
+      document.body.className = 'lang-' + lang;
+    }
+
+    window.onload = () => {
+      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
+        link.style.fontSize = '28px';
+      });
     }
   </script>
 </body>
