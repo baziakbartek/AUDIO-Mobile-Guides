@@ -3,356 +3,358 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Audio Mobile Guides - Polityka Prywatności</title>
+  <title>AUDIO-Mobile-Guides</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header {
+      background-color: #004466;
+      color: #fff;
+      padding: 15px 20px;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: space-between;
-      background-color: white;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .header-block {
-      width: 100%;
-    }
-
-    .decor-line {
-      width: 100%;
-      height: 12px;
-      background-color: #d4b518;
-      margin: 0;
-      padding: 0;
-    }
-
-    .title-bar {
-      width: 100%;
-      background-color: #f1cd17;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 32px;
-      font-weight: 700;
-      color: #000;
-      margin: 0;
-      transition: font-size 0.3s ease;
-    }
-
-    nav.nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 20px 0;
-      padding: 0 20px;
-      flex-wrap: wrap;
-      transition: all 0.3s ease;
-    }
-
-    nav.nav-links a {
-      position: relative;
-      font-size: 28px;
-      font-weight: 600;
-      color: #f1cd17;
-      text-decoration: none;
-      padding-bottom: 3px;
-      cursor: pointer;
-      transition: color 0.3s ease, font-size 0.3s ease;
-      margin-top: 10px;
-    }
-
-    nav.nav-links a.hidden {
-      display: none;
-    }
-
-    nav.nav-links a.shrink {
-      font-size: 22px !important;
-      pointer-events: none;
-      color: #d4b518 !important;
-    }
-
-    nav.nav-links a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background-color: #f1cd17;
-      transition: width 0.3s ease;
-    }
-
-    nav.nav-links a:hover,
-    nav.nav-links a:focus {
-      color: #d4b518;
-    }
-
-    nav.nav-links a:hover::after,
-    nav.nav-links a:focus::after {
-      width: 100%;
-    }
-
-    .policy-content {
-      max-width: 900px;
-      margin: 0 auto 30px auto;
-      padding: 0 20px 20px 20px;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .policy-content h1, .policy-content h2, .policy-content h3 {
-      color: #0d3b66;
-    }
-
-    .policy-content ul {
-      padding-left: 20px;
-    }
-
-    .policy-content table {
-      border-collapse: collapse;
-      width: 100%;
-      background-color: #fff;
-    }
-
-    .policy-content th, .policy-content td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
-
-    .policy-content th {
-      background-color: #e6f0fa;
-    }
-
-    .policy-content a {
-      color: #0d3b66;
-      text-decoration: none;
-    }
-
-    .policy-content a:hover,
-    .policy-content a:focus {
-      text-decoration: underline;
-    }
-
-    .languages {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-      position: sticky;
-      bottom: 0;
-      background: white;
       align-items: center;
-      border-top: 1px solid #ddd;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    .languages button {
-      padding: 10px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      background: #f1cd17;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      color: black;
-    }
-
-    .languages button:hover {
-      background-color: #d4b518;
-      color: white;
-    }
-
-    .languages .back-button {
-      background-color: #333;
-      color: #f1cd17;
-      font-weight: 700;
-      border-radius: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      margin-left: 10px;
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
       user-select: none;
     }
-
-    .languages .back-button:hover {
-      background-color: #555;
-      color: #fff;
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
     }
-
-    @media screen and (max-width: 600px) {
-      nav.nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
-
-      nav.nav-links a {
-        margin-top: 15px;
-      }
-
-      .languages {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .languages .back-button {
-        margin-left: 0;
-        margin-top: 10px;
-      }
+    nav button, nav select {
+      cursor: pointer;
+      background-color: #0077aa;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+    nav button:hover, nav select:hover {
+      background-color: #005577;
+    }
+    nav button.active {
+      background-color: #003344;
+      cursor: default;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto 60px auto;
+      background: white;
+      padding: 20px 25px;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      margin-top: 0;
+      color: #004466;
+    }
+    .museum-img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
+      box-shadow: 0 0 8px rgb(0 0 0 / 0.15);
+    }
+    .links-container {
+      margin: 30px 0 10px 0;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .links-container a {
+      display: inline-block;
+      background-color: #0077aa;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .links-container a:hover {
+      background-color: #005577;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #e0f0ff;
+      color: #004466;
+    }
+    .back-button {
+      margin-top: 25px;
+      background-color: #004466;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #002233;
     }
   </style>
 </head>
 <body>
-  <div class="header-block">
-    <div class="decor-line"></div>
-    <h1 class="title-bar">POLITYKA PRYWATNOŚCI</h1>
-    <div class="decor-line"></div>
-  </div>
+  <header>
+    <h1>AUDIO-Mobile-Guides</h1>
+    <nav>
+      <button id="homeBtn" class="active">Strona główna</button>
+      <button id="aboutBtn">O nas</button>
+      <select id="languageSelect" aria-label="Wybierz język">
+        <option value="pl" selected>PL</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
+    </nav>
+  </header>
 
-  <nav class="nav-links" id="navLinks">
-    <a href="#" id="linkOnas" onclick="selectNav('onas', event)">O nas</a>
-    <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)">Musée d'Orsay</a>
-    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
-    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
-  </nav>
+  <main>
+    <section id="homeSection" class="active" lang="pl">
+      <h2>Musée d'Orsay</h2>
+      <p>
+        Musée d'Orsay to jedno z najważniejszych muzeów w Paryżu, mieszczące się w zabytkowym budynku dawnej stacji kolejowej. 
+        Znajdują się tam bogate kolekcje dzieł sztuki z XIX i początku XX wieku, zwłaszcza impresjonizmu i postimpresjonizmu.
+      </p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Paris_Musee_d%27Orsay_2008.jpg" alt="Musée d'Orsay" class="museum-img" />
+      
+      <div class="links-container">
+        <a href="https://apps.apple.com/app/id123456789" target="_blank" rel="noopener">Przejdź do AppStore</a>
+        <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides" target="_blank" rel="noopener">Przejdź do Google Play</a>
+      </div>
+    </section>
 
-  <div class="policy-content" id="policy">
-    <h1>AUDIO-Mobile-Guides – O nas</h1>
+    <section id="aboutSection" lang="pl">
+      <h2>Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
+      <ol>
+        <li><strong>Administrator danych osobowych:</strong> Administratorem Twoich danych osobowych jest AUDIO-Mobile-Guides, z siedzibą w Polsce.</li>
+        <li><strong>Cel przetwarzania danych:</strong> Dane są przetwarzane w celu świadczenia usług aplikacji oraz komunikacji z użytkownikami.</li>
+        <li><strong>Zakres przetwarzanych danych:</strong> Przetwarzamy imię, adres e-mail, preferencje użytkownika oraz dane techniczne urządzenia.</li>
+        <li><strong>Podstawa prawna:</strong> Przetwarzanie odbywa się na podstawie zgody użytkownika oraz realizacji umowy.</li>
+        <li><strong>Udostępnianie danych:</strong> Dane nie są przekazywane podmiotom trzecim poza usługodawcami technicznymi wspierającymi działanie aplikacji.</li>
+        <li><strong>Bezpieczeństwo danych:</strong> Stosujemy środki techniczne i organizacyjne zapewniające ochronę Twoich danych, takie jak szyfrowanie i kontrola dostępu.</li>
+        <li><strong>Twoje prawa:</strong> Masz prawo dostępu do swoich danych, ich poprawiania, usunięcia, ograniczenia przetwarzania oraz prawo do przenoszenia danych.</li>
+        <li><strong>Okres przechowywania danych:</strong> Dane będą przechowywane przez okres niezbędny do realizacji usług oraz obowiązków prawnych.</li>
+        <li><strong>Kontakt:</strong> W przypadku pytań dotyczących ochrony danych prosimy o kontakt na adres: privacy@audio-mobile-guides.com.</li>
+      </ol>
 
-    <h2>1. Definicje</h2>
-    <ul>
-      <li><strong>Administrator</strong> – podmiot, który decyduje o celach i sposobach przetwarzania Twoich Danych osobowych.</li>
-      <li><strong>Dane osobowe</strong> – wszelkie informacje pozwalające na bezpośrednią identyfikację osoby fizycznej (np. imię, nazwisko, adres e-mail, numer telefonu).</li>
-      <li><strong>Polityka</strong> – niniejszy dokument, określający zasady ochrony Danych osobowych.</li>
-      <li><strong>RODO</strong> – Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych.</li>
-      <li><strong>Usługa</strong> – dostępna pod adresem <a href="https://audiomobileguides.com">https://audiomobileguides.com</a></li>
-    </ul>
+      <h3>Bezpieczeństwo danych – stosowane środki:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Środek</th>
+            <th>Opis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Szyfrowanie SSL</td>
+            <td>Cała komunikacja między aplikacją a serwerem jest szyfrowana protokołem SSL.</td>
+          </tr>
+          <tr>
+            <td>Kontrola dostępu</td>
+            <td>Dostęp do danych mają tylko upoważnieni pracownicy i systemy.</td>
+          </tr>
+          <tr>
+            <td>Regularne kopie zapasowe</td>
+            <td>Dane są regularnie archiwizowane i zabezpieczane.</td>
+          </tr>
+          <tr>
+            <td>Aktualizacje systemu</td>
+            <td>Systemy zabezpieczeń i aplikacja są regularnie aktualizowane.</td>
+          </tr>
+        </tbody>
+      </table>
 
-    <h2>2. Informacje o Administratorze</h2>
-    <p>
-      Administratorem Twoich danych osobowych jest Bartłomiej Barzik F.H.U. z siedzibą przy ul. Chodkiewicza 4/123, 31-532 Kraków.<br>
-      Adres e-mail do kontaktu: <a href="mailto:wedlug@audiomobileguides.com">wedlug@audiomobileguides.com</a>
-    </p>
-
-    <h2>3. Dane Inspektora Ochrony Danych</h2>
-    <p>
-      We wszelkich sprawach dotyczących przetwarzania danych osobowych oraz korzystania z przysługujących Ci praw związanych z tym przetwarzaniem możesz kontaktować się z Inspektorem Ochrony Danych:<br>
-      Adres: Bartłomiej Barzik F.H.U., Chodkiewicza 4/123, 31-532 Kraków<br>
-      E-mail: <a href="mailto:wedlug@audiomobileguides.com">wedlug@audiomobileguides.com</a>
-    </p>
-
-    <h2>4. Jakie dane przetwarzamy?</h2>
-    <p>
-      Przetwarzamy dane osobowe, które podajesz, podczas korzystania z naszych usług lub kontaktu, w szczególności: imię i nazwisko, adres e-mail, numer telefonu oraz inne dane identyfikacyjne, lokalizacyjne i techniczne (np. adres IP, dane o urządzeniu).<br>
-      Dane mogą być zbierane automatycznie za pośrednictwem plików cookies lub dobrowolnie podawane przez użytkownika.
-    </p>
-
-    <h2>5. W jakim celu i na jakiej podstawie przetwarzamy Twoje dane?</h2>
-    <p>Przetwarzamy dane w celu:</p>
-    <ul>
-      <li>realizacji Usługi,</li>
-      <li>kontaktowania się z użytkownikiem,</li>
-      <li>zapewnienia bezpieczeństwa systemów informatycznych,</li>
-      <li>przestrzegania obowiązujących przepisów prawa,</li>
-      <li>marketingu bezpośredniego, jeśli wyrazisz zgodę.</li>
-    </ul>
-    <p>Podstawą prawną przetwarzania jest:</p>
-    <ul>
-      <li>niezbędność do wykonania umowy,</li>
-      <li>Twoja zgoda,</li>
-      <li>prawnie uzasadniony interes Administratora,</li>
-      <li>obowiązek prawny.</li>
-    </ul>
-
-    <h2>6. Odbiorcy danych</h2>
-    <p>Dane mogą być przekazywane następującym kategoriom odbiorców:</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Kategoria odbiorcy</th>
-          <th>Cel przekazania danych</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Dostawcy usług IT</td>
-          <td>Zarządzanie stroną internetową, hostingiem, pocztą e-mail</td>
-        </tr>
-        <tr>
-          <td>Podmioty świadczące usługi marketingowe</td>
-          <td>Wysyłka newsletterów, kampanie reklamowe</td>
-        </tr>
-        <tr>
-          <td>Organy publiczne</td>
-          <td>Realizacja obowiązków prawnych</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="languages">
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('pl')">Polski</button>
-    <button onclick="setLanguage('uk')">Українська</button>
-    <button onclick="setLanguage('es')">Español</button>
-    <button onclick="setLanguage('de')">Deutsch</button>
-    <button onclick="setLanguage('bg')">Български</button>
-    <button class="back-button" onclick="resetView()">Wróć</button>
-  </div>
+      <button id="backBtn" class="back-button">Wróć</button>
+    </section>
+  </main>
 
   <script>
-    const policy = document.getElementById('policy');
-    const linkOnas = document.getElementById('linkOnas');
-    const linkOrsay = document.getElementById('linkOrsay');
-    const linkAppStore = document.getElementById('linkAppStore');
-    const linkGooglePlay = document.getElementById('linkGooglePlay');
+    const homeBtn = document.getElementById('homeBtn');
+    const aboutBtn = document.getElementById('aboutBtn');
+    const backBtn = document.getElementById('backBtn');
+    const homeSection = document.getElementById('homeSection');
+    const aboutSection = document.getElementById('aboutSection');
+    const languageSelect = document.getElementById('languageSelect');
 
-    function selectNav(selected, event) {
-      event.preventDefault();
-      policy.style.display = 'none';
-
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.classList.remove('hidden', 'shrink');
-        link.style.pointerEvents = 'auto';
-      });
-
-      if (selected === 'onas') {
-        policy.style.display = 'block';
-        linkOrsay.classList.add('hidden');
-        linkAppStore.classList.add('hidden');
-        linkGooglePlay.classList.add('hidden');
-        linkOnas.classList.add('shrink');
-      } else if (selected === 'orsay') {
-        linkOnas.classList.add('hidden');
-        linkAppStore.classList.add('hidden');
-        linkGooglePlay.classList.add('hidden');
-        linkOrsay.classList.add('shrink');
+    const translations = {
+      en: {
+        homeBtn: "Home",
+        aboutBtn: "About us",
+        headerTitle: "AUDIO-Mobile-Guides",
+        museumTitle: "Musée d'Orsay",
+        museumDescription: "The Musée d'Orsay is one of the most important museums in Paris, housed in a historic former railway station. It contains rich collections of 19th and early 20th-century art, especially Impressionism and Post-Impressionism.",
+        appStore: "Go to AppStore",
+        googlePlay: "Go to Google Play",
+        privacyTitle: "Privacy Policy of AUDIO-Mobile-Guides App",
+        points: [
+          "Data Controller: AUDIO-Mobile-Guides with headquarters in Poland is the data controller.",
+          "Purpose of processing: Data is processed to provide app services and communicate with users.",
+          "Scope of processed data: We process name, email address, user preferences, and device technical data.",
+          "Legal basis: Processing is based on user consent and contract execution.",
+          "Data sharing: Data is not shared with third parties except technical service providers supporting the app.",
+          "Data security: Technical and organizational measures like encryption and access control are applied.",
+          "Your rights: You have the right to access, rectify, delete, restrict processing, and data portability.",
+          "Data retention: Data is stored as long as necessary to provide services and legal obligations.",
+          "Contact: For data protection inquiries contact privacy@audio-mobile-guides.com."
+        ],
+        securityMeasuresTitle: "Data security – applied measures:",
+        securityMeasures: [
+          { measure: "SSL Encryption", desc: "All communication between the app and server is encrypted with SSL." },
+          { measure: "Access Control", desc: "Only authorized staff and systems have access to data." },
+          { measure: "Regular backups", desc: "Data is regularly archived and secured." },
+          { measure: "System updates", desc: "Security systems and the app are regularly updated." }
+        ],
+        backBtn: "Back"
+      },
+      fr: {
+        homeBtn: "Accueil",
+        aboutBtn: "À propos",
+        headerTitle: "AUDIO-Mobile-Guides",
+        museumTitle: "Musée d'Orsay",
+        museumDescription: "Le Musée d'Orsay est l'un des musées les plus importants de Paris, situé dans une ancienne gare historique. Il contient de riches collections d'art du XIXe et début du XXe siècle, notamment l'impressionnisme et le post-impressionnisme.",
+        appStore: "Aller à l'AppStore",
+        googlePlay: "Aller à Google Play",
+        privacyTitle: "Politique de confidentialité de l'application AUDIO-Mobile-Guides",
+        points: [
+          "Responsable des données : AUDIO-Mobile-Guides, basé en Pologne, est le responsable des données.",
+          "Objectif du traitement : Les données sont traitées pour fournir les services de l'application et communiquer avec les utilisateurs.",
+          "Portée des données traitées : Nous traitons le nom, l'adresse e-mail, les préférences de l'utilisateur et les données techniques de l'appareil.",
+          "Base légale : Le traitement est basé sur le consentement de l'utilisateur et l'exécution du contrat.",
+          "Partage des données : Les données ne sont pas partagées avec des tiers, sauf les prestataires techniques soutenant l'application.",
+          "Sécurité des données : Des mesures techniques et organisationnelles telles que le cryptage et le contrôle d'accès sont appliquées.",
+          "Vos droits : Vous avez le droit d'accéder, de rectifier, de supprimer, de limiter le traitement et de la portabilité des données.",
+          "Durée de conservation : Les données sont conservées aussi longtemps que nécessaire pour fournir les services et respecter les obligations légales.",
+          "Contact : Pour toute question relative à la protection des données, contactez privacy@audio-mobile-guides.com."
+        ],
+        securityMeasuresTitle: "Sécurité des données – mesures appliquées :",
+        securityMeasures: [
+          { measure: "Chiffrement SSL", desc: "Toutes les communications entre l'application et le serveur sont cryptées via SSL." },
+          { measure: "Contrôle d'accès", desc: "Seuls le personnel et les systèmes autorisés ont accès aux données." },
+          { measure: "Sauvegardes régulières", desc: "Les données sont régulièrement archivées et sécurisées." },
+          { measure: "Mises à jour système", desc: "Les systèmes de sécurité et l'application sont régulièrement mis à jour." }
+        ],
+        backBtn: "Retour"
       }
-    }
-
-    function resetView() {
-      policy.style.display = 'none';
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.classList.remove('hidden', 'shrink');
-        link.style.pointerEvents = 'auto';
-      });
-    }
+    };
 
     function setLanguage(lang) {
-      document.body.className = 'lang-' + lang;
+      document.documentElement.lang = lang;
+      const t = translations[lang] || translations.pl;
+
+      homeBtn.textContent = t.homeBtn;
+      aboutBtn.textContent = t.aboutBtn;
+      document.querySelector('header h1').textContent = t.headerTitle;
+
+      // Home Section
+      homeSection.querySelector('h2').textContent = t.museumTitle;
+      homeSection.querySelector('p').textContent = t.museumDescription;
+      homeSection.querySelectorAll('.links-container a')[0].textContent = t.appStore;
+      homeSection.querySelectorAll('.links-container a')[1].textContent = t.googlePlay;
+
+      // About Section
+      aboutSection.querySelector('h2').textContent = t.privacyTitle;
+
+      const ol = aboutSection.querySelector('ol');
+      ol.innerHTML = '';
+      if(lang === 'pl') {
+        ol.innerHTML = `
+          <li><strong>Administrator danych osobowych:</strong> Administratorem Twoich danych osobowych jest AUDIO-Mobile-Guides, z siedzibą w Polsce.</li>
+          <li><strong>Cel przetwarzania danych:</strong> Dane są przetwarzane w celu świadczenia usług aplikacji oraz komunikacji z użytkownikami.</li>
+          <li><strong>Zakres przetwarzanych danych:</strong> Przetwarzamy imię, adres e-mail, preferencje użytkownika oraz dane techniczne urządzenia.</li>
+          <li><strong>Podstawa prawna:</strong> Przetwarzanie odbywa się na podstawie zgody użytkownika oraz realizacji umowy.</li>
+          <li><strong>Udostępnianie danych:</strong> Dane nie są przekazywane podmiotom trzecim poza usługodawcami technicznymi wspierającymi działanie aplikacji.</li>
+          <li><strong>Bezpieczeństwo danych:</strong> Stosujemy środki techniczne i organizacyjne zapewniające ochronę Twoich danych, takie jak szyfrowanie i kontrola dostępu.</li>
+          <li><strong>Twoje prawa:</strong> Masz prawo dostępu do swoich danych, ich poprawiania, usunięcia, ograniczenia przetwarzania oraz prawo do przenoszenia danych.</li>
+          <li><strong>Okres przechowywania danych:</strong> Dane będą przechowywane przez okres niezbędny do realizacji usług oraz obowiązków prawnych.</li>
+          <li><strong>Kontakt:</strong> W przypadku pytań dotyczących ochrony danych prosimy o kontakt na adres: privacy@audio-mobile-guides.com.</li>`;
+      } else {
+        for(let i = 0; i < t.points.length; i++){
+          const li = document.createElement('li');
+          li.textContent = t.points[i];
+          ol.appendChild(li);
+        }
+      }
+
+      aboutSection.querySelector('h3').textContent = t.securityMeasuresTitle;
+
+      const tbody = aboutSection.querySelector('tbody');
+      tbody.innerHTML = '';
+      const measures = t.securityMeasures || [
+        { measure: "Szyfrowanie SSL", desc: "Cała komunikacja między aplikacją a serwerem jest szyfrowana protokołem SSL." },
+        { measure: "Kontrola dostępu", desc: "Dostęp do danych mają tylko upoważnieni pracownicy i systemy." },
+        { measure: "Regularne kopie zapasowe", desc: "Dane są regularnie archiwizowane i zabezpieczane." },
+        { measure: "Aktualizacje systemu", desc: "Systemy zabezpieczeń i aplikacja są regularnie aktualizowane." }
+      ];
+      for (const item of measures) {
+        const tr = document.createElement('tr');
+        const tdMeasure = document.createElement('td');
+        tdMeasure.textContent = item.measure;
+        const tdDesc = document.createElement('td');
+        tdDesc.textContent = item.desc;
+        tr.appendChild(tdMeasure);
+        tr.appendChild(tdDesc);
+        tbody.appendChild(tr);
+      }
+
+      backBtn.textContent = t.backBtn;
     }
 
-    window.onload = () => {
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.style.fontSize = '28px';
-      });
-    }
+    homeBtn.addEventListener('click', () => {
+      homeBtn.classList.add('active');
+      aboutBtn.classList.remove('active');
+      homeSection.classList.add('active');
+      aboutSection.classList.remove('active');
+    });
+
+    aboutBtn.addEventListener('click', () => {
+      aboutBtn.classList.add('active');
+      homeBtn.classList.remove('active');
+      aboutSection.classList.add('active');
+      homeSection.classList.remove('active');
+    });
+
+    backBtn.addEventListener('click', () => {
+      aboutBtn.classList.remove('active');
+      homeBtn.classList.add('active');
+      aboutSection.classList.remove('active');
+      homeSection.classList.add('active');
+    });
+
+    languageSelect.addEventListener('change', (e) => {
+      setLanguage(e.target.value);
+    });
+
+    setLanguage('pl');
   </script>
 </body>
 </html>
