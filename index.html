@@ -12,7 +12,7 @@
       flex-direction: column;
       min-height: 100vh;
       justify-content: space-between;
-      background-color: white;
+      background-color: #fff;
       color: #333;
       line-height: 1.6;
     }
@@ -38,7 +38,6 @@
       font-weight: 700;
       color: #000;
       margin: 0;
-      transition: font-size 0.3s ease;
     }
 
     nav.nav-links {
@@ -223,7 +222,7 @@
 
   <div class="policy-content" id="policy" style="display:none;">
     <h2>Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
-
+    
     <h3>1. Definicje</h3>
     <p><strong>Administrator</strong> – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;</p>
     <p><strong>Dane osobowe</strong> – wszystkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej, które dotyczą jej życia prywatnego, zawodowego lub publicznego, w tym m.in. imię, nazwisko, adres, adres e-mail, numer telefonu, identyfikatory elektroniczne, dane lokalizacyjne, IP;</p>
@@ -236,81 +235,72 @@
     Kontakt: ul. Chodkiewicza 4/12A, 31-532 Kraków, e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a></p>
 
     <h3>3. Dane Inspektora Ochrony Danych</h3>
-    <p>Inspektor Ochrony Danych można kontaktować pod adresem e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a>.</p>
+    <p>Dane Inspektora Ochrony Danych (IOD):</p>
+    <ul>
+      <li>e-mail: iod@audiomobileguides.com</li>
+      <li>telefon: +48 123 456 789</li>
+    </ul>
 
-    <h3>4. Jakie dane przetwarzamy?</h3>
-    <p>Przetwarzamy dane podane przez Ciebie w formularzach kontaktowych oraz dane techniczne, takie jak adres IP, pliki cookies.</p>
+    <h3>4. Cele i podstawy przetwarzania danych</h3>
+    <p>Twoje dane osobowe przetwarzane są wyłącznie w celach świadczenia usług aplikacji, zgodnie z Twoją zgodą i obowiązującymi przepisami prawa.</p>
 
-    <h3>5. Cele i podstawy prawne przetwarzania danych</h3>
-    <p>Dane przetwarzamy w celu realizacji zamówień, kontaktu z użytkownikiem, analizy statystycznej oraz marketingu, zgodnie z odpowiednimi przepisami prawa.</p>
+    <h3>5. Prawa użytkownika</h3>
+    <p>Masz prawo dostępu do swoich danych, ich poprawiania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wniesienia sprzeciwu wobec przetwarzania danych oraz prawo do cofnięcia zgody w dowolnym momencie.</p>
 
-    <h3>6. Odbiorcy danych</h3>
-    <p>Twoje dane mogą być przekazywane podmiotom świadczącym usługi IT, hostingowe, marketingowe oraz innym podmiotom działającym na nasze zlecenie, które zapewniają odpowiednie zabezpieczenia.</p>
+    <h3>6. Cookies</h3>
+    <p>Nasza aplikacja używa plików cookies, które pomagają nam w analizie ruchu oraz poprawiają funkcjonowanie strony. Możesz zarządzać ustawieniami cookies w swojej przeglądarce.</p>
 
-    <h3>7. Prawa użytkownika</h3>
-    <p>Przysługuje Ci prawo dostępu do swoich danych, ich poprawiania, usunięcia, ograniczenia przetwarzania, przenoszenia, sprzeciwu oraz prawo do wniesienia skargi do organu nadzorczego.</p>
+    <h3>7. Profilowanie</h3>
+    <p>Nie stosujemy profilowania danych osobowych w naszej aplikacji.</p>
 
-    <h3>8. Pliki cookies</h3>
-    <p>Wykorzystujemy pliki cookies w celach technicznych, analitycznych oraz marketingowych.</p>
+    <h3>8. Okres przechowywania danych</h3>
+    <p>Dane osobowe przechowujemy przez okres niezbędny do realizacji celów przetwarzania oraz zgodnie z wymogami prawa.</p>
 
-    <h3>9. Wtyczki społecznościowe</h3>
-    <p>Na naszej stronie mogą występować wtyczki społecznościowe, takie jak Facebook. Korzystanie z nich wiąże się z polityką prywatności tych serwisów.<br>
-    <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Zobacz politykę Facebooka</a></p>
-
-    <p><em>Informujemy, że ograniczenia bądź wyłączenia stosowania plików cookies i innych podobnych technologii mogą wpłynąć na niektóre funkcjonalności dostępne w naszych serwisach.</em></p>
+    <h3>9. Kontakt</h3>
+    <p>W przypadku pytań dotyczących polityki prywatności, prosimy o kontakt na adres: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a>.</p>
   </div>
 
   <div class="languages">
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('pl')">Polski</button>
-    <button onclick="setLanguage('uk')">Українська</button>
-    <button onclick="setLanguage('es')">Español</button>
-    <button onclick="setLanguage('de')">Deutsch</button>
-    <button onclick="setLanguage('bg')">Български</button>
-    <button class="back-button" onclick="resetView()">Wróć</button>
+    <button id="btnPl" onclick="selectLanguage('pl')">PL</button>
+    <button id="btnEn" onclick="selectLanguage('en')">EN</button>
+    <button id="btnDe" onclick="selectLanguage('de')">DE</button>
+    <button id="btnFr" onclick="selectLanguage('fr')">FR</button>
+    <button class="back-button" id="btnBack" onclick="goBack()" style="display:none;">Wróć</button>
   </div>
 
   <script>
-    const policy = document.getElementById('policy');
+    const policyContent = document.getElementById('policy');
+    const navLinks = document.getElementById('navLinks');
     const linkOnas = document.getElementById('linkOnas');
     const linkOrsay = document.getElementById('linkOrsay');
-    const linkAppStore = document.getElementById('linkAppStore');
-    const linkGooglePlay = document.getElementById('linkGooglePlay');
+    const btnBack = document.getElementById('btnBack');
 
-    function selectNav(selected, event) {
+    function selectNav(section, event) {
       event.preventDefault();
-      policy.style.display = 'none';
-
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.classList.remove('hidden', 'shrink');
-        link.style.pointerEvents = 'auto';
-      });
-
-      if (selected === 'onas') {
-        policy.style.display = 'block';
-        linkOrsay.classList.add('hidden');
-        linkAppStore.classList.add('hidden');
-        linkGooglePlay.classList.add('hidden');
-        linkOnas.classList.add('shrink');
-      } else if (selected === 'orsay') {
-        policy.style.display = 'none';
-        linkOnas.classList.add('hidden');
-        linkAppStore.classList.add('hidden');
-        linkGooglePlay.classList.add('hidden');
-        linkOrsay.classList.add('shrink');
+      if (section === 'onas') {
+        policyContent.style.display = 'block';
+        navLinks.querySelectorAll('a').forEach(a => {
+          if (a.id !== 'linkOnas') {
+            a.classList.add('hidden');
+          }
+          if (a.id === 'linkOnas') {
+            a.classList.add('shrink');
+          }
+        });
+        btnBack.style.display = 'inline-block';
       }
     }
 
-    function setLanguage(lang) {
-      alert(`Wybrano język: ${lang}. W tej wersji demo zmiana języka nie jest zaimplementowana.`);
+    function goBack() {
+      policyContent.style.display = 'none';
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.classList.remove('hidden', 'shrink');
+      });
+      btnBack.style.display = 'none';
     }
 
-    function resetView() {
-      policy.style.display = 'none';
-      [linkOnas, linkOrsay, linkAppStore, linkGooglePlay].forEach(link => {
-        link.classList.remove('hidden', 'shrink');
-        link.style.pointerEvents = 'auto';
-      });
+    function selectLanguage(lang) {
+      alert('Wybrano język: ' + lang.toUpperCase());
     }
   </script>
 </body>
