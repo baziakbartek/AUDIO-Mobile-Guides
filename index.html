@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,11 +17,9 @@
       color: #333;
       line-height: 1.6;
     }
-
     .header-block {
       width: 100%;
     }
-
     .decor-line {
       width: 100%;
       height: 12px;
@@ -28,7 +27,6 @@
       margin: 0;
       padding: 0;
     }
-
     .title-bar {
       width: 100%;
       background-color: #f1cd17;
@@ -39,7 +37,6 @@
       color: #000;
       margin: 0;
     }
-
     nav.nav-links {
       display: flex;
       justify-content: center;
@@ -49,7 +46,6 @@
       flex-wrap: wrap;
       transition: all 0.3s ease;
     }
-
     nav.nav-links a {
       position: relative;
       font-size: 24px;
@@ -61,17 +57,14 @@
       transition: color 0.3s ease, font-size 0.3s ease;
       margin-top: 10px;
     }
-
     nav.nav-links a.hidden {
       display: none;
     }
-
     nav.nav-links a.shrink {
       font-size: 18px;
       pointer-events: none;
       color: #d4b518;
     }
-
     nav.nav-links a::after {
       content: '';
       position: absolute;
@@ -82,17 +75,14 @@
       background-color: #f1cd17;
       transition: width 0.3s ease;
     }
-
     nav.nav-links a:hover,
     nav.nav-links a:focus {
       color: #d4b518;
     }
-
     nav.nav-links a:hover::after,
     nav.nav-links a:focus::after {
       width: 100%;
     }
-
     .image-container {
       width: 100%;
       display: flex;
@@ -100,14 +90,12 @@
       margin-bottom: 40px;
       margin-top: 20px;
     }
-
     .image-container img {
       max-width: 90%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
-
     .policy-content,
     .orsay-content {
       max-width: 900px;
@@ -117,7 +105,6 @@
       color: #333;
       display: none;
     }
-
     .policy-content h2,
     .orsay-content h2 {
       text-align: center;
@@ -126,12 +113,10 @@
       font-weight: 700;
       color: #000;
     }
-
     .policy-content p,
     .orsay-content p {
       margin: 8px 0;
     }
-
     .languages {
       display: flex;
       justify-content: center;
@@ -144,7 +129,6 @@
       align-items: center;
       border-top: 1px solid #ddd;
     }
-
     .languages button {
       padding: 10px 15px;
       font-size: 14px;
@@ -156,12 +140,10 @@
       transition: background-color 0.3s ease;
       color: black;
     }
-
     .languages button:hover {
       background-color: #d4b518;
       color: white;
     }
-
     .languages .back-button {
       background-color: #333;
       color: #f1cd17;
@@ -173,24 +155,20 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       margin-left: 10px;
     }
-
     .languages .back-button:hover {
       background-color: #555;
       color: #fff;
     }
-
     @media screen and (max-width: 600px) {
       nav.nav-links {
         flex-direction: column;
         align-items: center;
         gap: 20px;
       }
-
       .languages {
         flex-direction: column;
         align-items: center;
       }
-
       .languages .back-button {
         margin-left: 0;
         margin-top: 10px;
@@ -204,28 +182,23 @@
     <h1 class="title-bar" id="pageTitle">AUDIO-Mobile-Guides</h1>
     <div class="decor-line"></div>
   </div>
-
   <nav class="nav-links" id="navLinks">
     <a href="#" id="linkOnas" onclick="selectNav('onas', event)">O nas</a>
     <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)">Musée d'Orsay</a>
     <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
     <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
   </nav>
-
   <div class="image-container">
     <img src="https://audiomobileguides.com/modules/GreenKangooGuide/img/image-body-1.jpg" alt="Audioguide Image" />
   </div>
-
   <div class="policy-content" id="policy">
     <h2 id="policyTitle">Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
     <p id="policyBody">Dane osobowe są przetwarzane wyłącznie w celach świadczenia usług aplikacji. Masz prawo dostępu, poprawiania, usuwania danych. Nie stosujemy profilowania.</p>
   </div>
-
   <div class="orsay-content" id="orsayText">
     <h2 id="orsayTitle">Musée d'Orsay – przewodnik audio</h2>
     <p id="orsayBody">Wyobraź sobie spacer korytarzami dawnego dworca kolejowego, gdzie Twój audio-przewodnik przenosi Cię do świata Van Gogha, Moneta i innych mistrzów. Z tą aplikacją obrazy przemawiają do Ciebie jak nigdy wcześniej.</p>
   </div>
-
   <div class="languages">
     <button onclick="changeLanguage('pl')">Polski</button>
     <button onclick="changeLanguage('en')">English</button>
@@ -234,11 +207,7 @@
     <button onclick="changeLanguage('bg')">Български</button>
     <button class="back-button" id="btnBack" onclick="goBack()" style="display:none;">Wróć</button>
   </div>
-
   <script>
-    let currentSection = null;
-    let currentLanguage = 'pl';
-
     const texts = {
       pl: {
         title: "AUDIO-Mobile-Guides",
@@ -295,66 +264,53 @@
         orsayTitle: "Музей д'Орсе – Аудио гид",
         orsayBody: "Представете си разходка из стара жп гара, където вашият аудио гид ви въвежда в света на Ван Гог, Моне и други майстори. С това приложение картините ви говорят както никога досега."
       }
-    };
-
+    }
+    let currentLanguage = 'pl'
+    let currentSection = null
     function changeLanguage(lang) {
-      currentLanguage = lang;
-      document.getElementById("pageTitle").innerText = texts[lang].title;
-      document.getElementById("linkOnas").innerText = texts[lang].onas;
-      document.getElementById("linkOrsay").innerText = texts[lang].orsay;
-      document.getElementById("linkAppStore").innerText = texts[lang].appstore;
-      document.getElementById("linkGooglePlay").innerText = texts[lang].googleplay;
-
-      if (currentSection === "onas") {
-        document.getElementById("policyTitle").innerText = texts[lang].policyTitle;
-        document.getElementById("policyBody").innerText = texts[lang].policyBody;
-        document.getElementById("policy").style.display = "block";
-        document.getElementById("orsayText").style.display = "none";
-      } else if (currentSection === "orsay") {
-        document.getElementById("orsayTitle").innerText = texts[lang].orsayTitle;
-        document.getElementById("orsayBody").innerText = texts[lang].orsayBody;
-        document.getElementById("orsayText").style.display = "block";
-        document.getElementById("policy").style.display = "none";
-      } else {
-        document.getElementById("policy").style.display = "none";
-        document.getElementById("orsayText").style.display = "none";
+      currentLanguage = lang
+      document.getElementById("pageTitle").innerText = texts[lang].title
+      document.getElementById("linkOnas").innerText = texts[lang].onas
+      document.getElementById("linkOrsay").innerText = texts[lang].orsay
+      document.getElementById("linkAppStore").innerText = texts[lang].appstore
+      document.getElementById("linkGooglePlay").innerText = texts[lang].googleplay
+      document.getElementById("policyTitle").innerText = texts[lang].policyTitle
+      document.getElementById("policyBody").innerText = texts[lang].policyBody
+      document.getElementById("orsayTitle").innerText = texts[lang].orsayTitle
+      document.getElementById("orsayBody").innerText = texts[lang].orsayBody
+      if(currentSection === 'onas') {
+        document.getElementById("policy").style.display = "block"
+        document.getElementById("orsayText").style.display = "none"
+      } else if(currentSection === 'orsay') {
+        document.getElementById("policy").style.display = "none"
+        document.getElementById("orsayText").style.display = "block"
       }
     }
-
     function selectNav(section, event) {
-      event.preventDefault();
-      currentSection = section;
-      document.getElementById("policy").style.display = "none";
-      document.getElementById("orsayText").style.display = "none";
+      event.preventDefault()
+      currentSection = section
+      document.getElementById("policy").style.display = "none"
+      document.getElementById("orsayText").style.display = "none"
       document.querySelectorAll("nav.nav-links a").forEach(a => {
-        a.classList.add("hidden");
-      });
-      document.getElementById("btnBack").style.display = "inline-block";
-
-      if (section === "onas") {
-        document.getElementById("policyTitle").innerText = texts[currentLanguage].policyTitle;
-        document.getElementById("policyBody").innerText = texts[currentLanguage].policyBody;
-        document.getElementById("policy").style.display = "block";
-      } else if (section === "orsay") {
-        document.getElementById("orsayTitle").innerText = texts[currentLanguage].orsayTitle;
-        document.getElementById("orsayBody").innerText = texts[currentLanguage].orsayBody;
-        document.getElementById("orsayText").style.display = "block";
+        a.classList.add("hidden")
+      })
+      document.getElementById("btnBack").style.display = "inline-block"
+      if(section === "onas") {
+        document.getElementById("policy").style.display = "block"
+      } else if(section === "orsay") {
+        document.getElementById("orsayText").style.display = "block"
       }
     }
-
     function goBack() {
-      currentSection = null;
-      document.getElementById("policy").style.display = "none";
-      document.getElementById("orsayText").style.display = "none";
+      currentSection = null
+      document.getElementById("policy").style.display = "none"
+      document.getElementById("orsayText").style.display = "none"
       document.querySelectorAll("nav.nav-links a").forEach(a => {
-        a.classList.remove("hidden", "shrink");
-      });
-      document.getElementById("btnBack").style.display = "none";
-    }
-
-    window.onload = () => {
-      changeLanguage(currentLanguage);
+        a.classList.remove("hidden", "shrink")
+      })
+      document.getElementById("btnBack").style.display = "none"
     }
   </script>
 </body>
 </html>
+```
