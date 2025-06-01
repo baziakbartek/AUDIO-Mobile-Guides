@@ -37,7 +37,7 @@
       font-size: 32px;
       font-weight: 700;
       color: #000;
-      margin: 0 0 10px 0;
+      margin: 0; /* usunąłem dolny margines, żeby linie były blisko */
     }
 
     nav.nav-links {
@@ -294,8 +294,6 @@
     const policyContent = document.getElementById('policy');
     const orsayText = document.getElementById('orsayText');
     const navLinks = document.getElementById('navLinks');
-    const linkOnas = document.getElementById('linkOnas');
-    const linkOrsay = document.getElementById('linkOrsay');
     const btnBack = document.getElementById('btnBack');
 
     function selectNav(section, event) {
