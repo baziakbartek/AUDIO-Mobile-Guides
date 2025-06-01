@@ -44,7 +44,7 @@
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin: 20px 0;
+      margin: 20px 0 10px 0;
       padding: 0 20px;
       flex-wrap: wrap;
       transition: all 0.3s ease;
@@ -91,6 +91,20 @@
     nav.nav-links a:hover::after,
     nav.nav-links a:focus::after {
       width: 100%;
+    }
+
+    .image-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .image-container img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .policy-content,
@@ -223,6 +237,10 @@
     <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
     <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
   </nav>
+
+  <div class="image-container">
+    <img src="https://audiomobileguides.com/modules/GreenKangooGuide/img/image-body-1.jpg" alt="Audioguide Image" />
+  </div>
 
   <div class="policy-content" id="policy">
     <h2>Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
