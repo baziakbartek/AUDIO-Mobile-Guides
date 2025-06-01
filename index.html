@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polityka Prywatności | AUDIO-Mobile-Guides</title>
+  <title>AUDIO-Mobile-Guides</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,12 +43,31 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      display: none;
+    }
+    nav a {
+      margin-right: 15px;
+      cursor: pointer;
+      color: #0d3b66;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section.active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <section id="o-nas">
+  <nav>
+    <a id="link-o-nas">O nas</a>
+    <a id="link-polityka">Polityka Prywatności</a>
+  </nav>
+
+  <section id="o-nas" class="active">
     <h1>AUDIO-Mobile-Guides – O nas</h1>
 
     <h2>1. Definicje</h2>
@@ -156,6 +175,27 @@
       Polityka prywatności może być aktualizowana. Wszelkie zmiany będą publikowane na tej stronie z odpowiednim wyprzedzeniem.
     </p>
   </section>
+
+  <section id="polityka">
+    <h1>Polityka Prywatności</h1>
+    <p>Tu wpisz swoją treść polityki prywatności.</p>
+  </section>
+
+  <script>
+    const linkONas = document.getElementById('link-o-nas');
+    const linkPolityka = document.getElementById('link-polityka');
+    const sekcjaONas = document.getElementById('o-nas');
+    const sekcjaPolityka = document.getElementById('polityka');
+
+    function pokazSekcje(sekcja) {
+      sekcjaONas.classList.remove('active');
+      sekcjaPolityka.classList.remove('active');
+      sekcja.classList.add('active');
+    }
+
+    linkONas.addEventListener('click', () => pokazSekcje(sekcjaONas));
+    linkPolityka.addEventListener('click', () => pokazSekcje(sekcjaPolityka));
+  </script>
 
 </body>
 </html>
