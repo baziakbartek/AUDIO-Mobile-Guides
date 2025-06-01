@@ -236,6 +236,9 @@
   </div>
 
   <script>
+    let currentSection = null;
+    let currentLanguage = 'pl';
+
     const texts = {
       pl: {
         title: "AUDIO-Mobile-Guides",
@@ -295,19 +298,32 @@
     };
 
     function changeLanguage(lang) {
+      currentLanguage = lang;
       document.getElementById("pageTitle").innerText = texts[lang].title;
       document.getElementById("linkOnas").innerText = texts[lang].onas;
       document.getElementById("linkOrsay").innerText = texts[lang].orsay;
       document.getElementById("linkAppStore").innerText = texts[lang].appstore;
       document.getElementById("linkGooglePlay").innerText = texts[lang].googleplay;
-      document.getElementById("policyTitle").innerText = texts[lang].policyTitle;
-      document.getElementById("policyBody").innerText = texts[lang].policyBody;
-      document.getElementById("orsayTitle").innerText = texts[lang].orsayTitle;
-      document.getElementById("orsayBody").innerText = texts[lang].orsayBody;
+
+      if (currentSection === "onas") {
+        document.getElementById("policyTitle").innerText = texts[lang].policyTitle;
+        document.getElementById("policyBody").innerText = texts[lang].policyBody;
+        document.getElementById("policy").style.display = "block";
+        document.getElementById("orsayText").style.display = "none";
+      } else if (currentSection === "orsay") {
+        document.getElementById("orsayTitle").innerText = texts[lang].orsayTitle;
+        document.getElementById("orsayBody").innerText = texts[lang].orsayBody;
+        document.getElementById("orsayText").style.display = "block";
+        document.getElementById("policy").style.display = "none";
+      } else {
+        document.getElementById("policy").style.display = "none";
+        document.getElementById("orsayText").style.display = "none";
+      }
     }
 
     function selectNav(section, event) {
       event.preventDefault();
+      currentSection = section;
       document.getElementById("policy").style.display = "none";
       document.getElementById("orsayText").style.display = "none";
       document.querySelectorAll("nav.nav-links a").forEach(a => {
@@ -316,19 +332,28 @@
       document.getElementById("btnBack").style.display = "inline-block";
 
       if (section === "onas") {
+        document.getElementById("policyTitle").innerText = texts[currentLanguage].policyTitle;
+        document.getElementById("policyBody").innerText = texts[currentLanguage].policyBody;
         document.getElementById("policy").style.display = "block";
       } else if (section === "orsay") {
+        document.getElementById("orsayTitle").innerText = texts[currentLanguage].orsayTitle;
+        document.getElementById("orsayBody").innerText = texts[currentLanguage].orsayBody;
         document.getElementById("orsayText").style.display = "block";
       }
     }
 
     function goBack() {
+      currentSection = null;
       document.getElementById("policy").style.display = "none";
       document.getElementById("orsayText").style.display = "none";
       document.querySelectorAll("nav.nav-links a").forEach(a => {
         a.classList.remove("hidden", "shrink");
       });
       document.getElementById("btnBack").style.display = "none";
+    }
+
+    window.onload = () => {
+      changeLanguage(currentLanguage);
     }
   </script>
 </body>
