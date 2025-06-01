@@ -33,18 +33,18 @@
       width: 100%;
       background-color: #f1cd17;
       text-align: center;
-      padding: 10px 0;
-      font-size: 32px;
+      padding: 20px 0;
+      font-size: 36px;
       font-weight: 700;
       color: #000;
-      margin: 0; /* usunąłem dolny margines, żeby linie były blisko */
+      margin: 0;
     }
 
     nav.nav-links {
       display: flex;
       justify-content: center;
       gap: 30px;
-      margin: 10px 0 10px 0;
+      margin: 30px 0 10px 0;
       padding: 0 20px;
       flex-wrap: wrap;
       transition: all 0.3s ease;
@@ -59,7 +59,7 @@
       padding-bottom: 3px;
       cursor: pointer;
       transition: color 0.3s ease, font-size 0.3s ease;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     nav.nav-links a.hidden {
@@ -67,9 +67,9 @@
     }
 
     nav.nav-links a.shrink {
-      font-size: 20px !important;
+      font-size: 18px;
       pointer-events: none;
-      color: #d4b518 !important;
+      color: #d4b518;
     }
 
     nav.nav-links a::after {
@@ -97,7 +97,8 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      margin-top: 20px;
     }
 
     .image-container img {
@@ -126,37 +127,15 @@
       color: #000;
     }
 
-    .policy-content h3 {
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: #d4b518;
-    }
-
     .policy-content p,
     .orsay-content p {
       margin: 8px 0;
     }
 
-    .policy-content p strong {
-      color: #000;
-    }
-
-    .policy-content a {
-      color: #d4b518;
-      text-decoration: none;
-    }
-
-    .policy-content a:hover,
-    .policy-content a:focus {
-      text-decoration: underline;
-    }
-
     .languages {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       padding: 20px;
       flex-wrap: wrap;
       position: sticky;
@@ -193,7 +172,6 @@
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease;
       margin-left: 10px;
-      user-select: none;
     }
 
     .languages .back-button:hover {
@@ -205,12 +183,7 @@
       nav.nav-links {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-      }
-
-      nav.nav-links a {
-        margin-top: 12px;
-        font-size: 20px;
+        gap: 20px;
       }
 
       .languages {
@@ -228,7 +201,7 @@
 <body>
   <div class="header-block">
     <div class="decor-line"></div>
-    <h1 class="title-bar">AUDIO-Mobile-Guides</h1>
+    <h1 class="title-bar" id="pageTitle">AUDIO-Mobile-Guides</h1>
     <div class="decor-line"></div>
   </div>
 
@@ -244,90 +217,118 @@
   </div>
 
   <div class="policy-content" id="policy">
-    <h2>Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
-    <h3>1. Definicje</h3>
-    <p><strong>Administrator</strong> – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;</p>
-    <p><strong>Dane osobowe</strong> – wszystkie informacje o zidentyfikowanej lub możliwej do zidentyfikowania osobie fizycznej...</p>
-    <h3>2. Informacje o Administratorze</h3>
-    <p>Administrator: Bartłomiej Baziak F16<br>Adres: ul. Chodkiewicza 4/12A, 31-532 Kraków<br>e-mail: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a></p>
-    <h3>3. Dane Inspektora Ochrony Danych</h3>
-    <ul>
-      <li>e-mail: iod@audiomobileguides.com</li>
-      <li>telefon: +48 123 456 789</li>
-    </ul>
-    <h3>4. Cele i podstawy przetwarzania danych</h3>
-    <p>Dane osobowe są przetwarzane wyłącznie w celach świadczenia usług aplikacji...</p>
-    <h3>5. Prawa użytkownika</h3>
-    <p>Masz prawo dostępu, poprawiania, usuwania danych itd.</p>
-    <h3>6. Cookies</h3>
-    <p>Strona korzysta z cookies...</p>
-    <h3>7. Profilowanie</h3>
-    <p>Nie stosujemy profilowania.</p>
-    <h3>8. Okres przechowywania danych</h3>
-    <p>Dane przechowywane są przez okres wymagany prawnie.</p>
-    <h3>9. Kontakt</h3>
-    <p>Kontakt: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a></p>
+    <h2 id="policyTitle">Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
+    <p id="policyBody">Dane osobowe są przetwarzane wyłącznie w celach świadczenia usług aplikacji. Masz prawo dostępu, poprawiania, usuwania danych. Nie stosujemy profilowania.</p>
   </div>
 
   <div class="orsay-content" id="orsayText">
-    <h2>Musée d'Orsay – przewodnik audio</h2>
-    <p>
-      Wyobraź sobie spacer korytarzami przebudowanego dworca kolejowego, podczas którego Twój audio-przewodnik przeniesie Cię do umysłów Van Gogha, Degasa, Moneta. Usłyszysz historie stojące za arcydziełami sztuki, poczujesz pasję artystów i odkryjesz ukryte szczegóły, których inaczej byś nie zauważył.
-    </p>
-    <p>
-      Doświadczysz atmosfery wolności ekspresji i nowego spojrzenia na rzeczywistość, które uczyniły ówczesny Paryż stolicą nowoczesnej sztuki. Z tą aplikacją obrazy stają się rozmową, a nie tylko wizualną ucztą dla oka.
-    </p>
-    <p>
-      To koniec z nudnymi tabliczkami, bezimiennymi twarzami, scenami, które ukazują nieznane wydarzenia. Więc, gdy będziesz w Paryżu, uruchom aplikację i pozwól Muzeum d'Orsay szepnąć Ci swoje sekrety. Gotowy do podróży w czasie?!!!
-    </p>
+    <h2 id="orsayTitle">Musée d'Orsay – przewodnik audio</h2>
+    <p id="orsayBody">Wyobraź sobie spacer korytarzami dawnego dworca kolejowego, gdzie Twój audio-przewodnik przenosi Cię do świata Van Gogha, Moneta i innych mistrzów. Z tą aplikacją obrazy przemawiają do Ciebie jak nigdy wcześniej.</p>
   </div>
 
   <div class="languages">
-    <button id="btnPl" onclick="selectLanguage('pl')">Polski</button>
-    <button id="btnEn" onclick="selectLanguage('en')">Angielski</button>
-    <button id="btnDe" onclick="selectLanguage('de')">Niemiecki</button>
-    <button id="btnFr" onclick="selectLanguage('fr')">Francuski</button>
+    <button onclick="changeLanguage('pl')">Polski</button>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('de')">Deutsch</button>
+    <button onclick="changeLanguage('fr')">Français</button>
+    <button onclick="changeLanguage('bg')">Български</button>
     <button class="back-button" id="btnBack" onclick="goBack()" style="display:none;">Wróć</button>
   </div>
 
   <script>
-    const policyContent = document.getElementById('policy');
-    const orsayText = document.getElementById('orsayText');
-    const navLinks = document.getElementById('navLinks');
-    const btnBack = document.getElementById('btnBack');
+    const texts = {
+      pl: {
+        title: "AUDIO-Mobile-Guides",
+        onas: "O nas",
+        orsay: "Musée d'Orsay",
+        appstore: "Przejdź do AppStore",
+        googleplay: "Przejdź do Google Play",
+        policyTitle: "Polityka prywatności aplikacji AUDIO-Mobile-Guides",
+        policyBody: "Dane osobowe są przetwarzane wyłącznie w celach świadczenia usług aplikacji. Masz prawo dostępu, poprawiania, usuwania danych. Nie stosujemy profilowania.",
+        orsayTitle: "Musée d'Orsay – przewodnik audio",
+        orsayBody: "Wyobraź sobie spacer korytarzami dawnego dworca kolejowego, gdzie Twój audio-przewodnik przenosi Cię do świata Van Gogha, Moneta i innych mistrzów. Z tą aplikacją obrazy przemawiają do Ciebie jak nigdy wcześniej."
+      },
+      en: {
+        title: "AUDIO-Mobile-Guides",
+        onas: "About Us",
+        orsay: "Musée d'Orsay",
+        appstore: "Go to AppStore",
+        googleplay: "Go to Google Play",
+        policyTitle: "Privacy Policy of AUDIO-Mobile-Guides App",
+        policyBody: "Personal data is processed solely for the purpose of providing app services. You have the right to access, modify, and delete your data. We do not use profiling.",
+        orsayTitle: "Musée d'Orsay – Audio Guide",
+        orsayBody: "Imagine walking through an old train station, where your audio guide takes you into the world of Van Gogh, Monet, and other masters. With this app, paintings speak to you like never before."
+      },
+      de: {
+        title: "AUDIO-Mobile-Guides",
+        onas: "Über uns",
+        orsay: "Musée d'Orsay",
+        appstore: "Zum AppStore",
+        googleplay: "Zum Google Play",
+        policyTitle: "Datenschutzrichtlinie der AUDIO-Mobile-Guides App",
+        policyBody: "Personenbezogene Daten werden ausschließlich zur Bereitstellung der App-Dienste verarbeitet. Sie haben das Recht auf Zugriff, Berichtigung und Löschung Ihrer Daten. Es erfolgt kein Profiling.",
+        orsayTitle: "Musée d'Orsay – Audioguide",
+        orsayBody: "Stellen Sie sich einen Spaziergang durch einen alten Bahnhof vor, bei dem Ihr Audioguide Sie in die Welt von Van Gogh, Monet und anderen Meistern entführt. Mit dieser App sprechen die Bilder zu Ihnen wie nie zuvor."
+      },
+      fr: {
+        title: "AUDIO-Mobile-Guides",
+        onas: "À propos de nous",
+        orsay: "Musée d'Orsay",
+        appstore: "Accéder à l'AppStore",
+        googleplay: "Accéder à Google Play",
+        policyTitle: "Politique de confidentialité de l'application AUDIO-Mobile-Guides",
+        policyBody: "Les données personnelles sont traitées uniquement pour fournir les services de l'application. Vous avez le droit d'accéder, de modifier et de supprimer vos données. Aucun profilage n'est effectué.",
+        orsayTitle: "Musée d'Orsay – Guide audio",
+        orsayBody: "Imaginez marcher dans une ancienne gare, où votre guide audio vous transporte dans l'univers de Van Gogh, Monet et d'autres maîtres. Avec cette application, les tableaux vous parlent comme jamais auparavant."
+      },
+      bg: {
+        title: "AUDIO-Mobile-Guides",
+        onas: "За нас",
+        orsay: "Музей д'Орсе",
+        appstore: "Отидете в AppStore",
+        googleplay: "Отидете в Google Play",
+        policyTitle: "Политика за поверителност на приложението AUDIO-Mobile-Guides",
+        policyBody: "Личните данни се обработват само с цел предоставяне на услугите на приложението. Имате право на достъп, промяна и изтриване на данните си. Не използваме профилиране.",
+        orsayTitle: "Музей д'Орсе – Аудио гид",
+        orsayBody: "Представете си разходка из стара жп гара, където вашият аудио гид ви въвежда в света на Ван Гог, Моне и други майстори. С това приложение картините ви говорят както никога досега."
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.getElementById("pageTitle").innerText = texts[lang].title;
+      document.getElementById("linkOnas").innerText = texts[lang].onas;
+      document.getElementById("linkOrsay").innerText = texts[lang].orsay;
+      document.getElementById("linkAppStore").innerText = texts[lang].appstore;
+      document.getElementById("linkGooglePlay").innerText = texts[lang].googleplay;
+      document.getElementById("policyTitle").innerText = texts[lang].policyTitle;
+      document.getElementById("policyBody").innerText = texts[lang].policyBody;
+      document.getElementById("orsayTitle").innerText = texts[lang].orsayTitle;
+      document.getElementById("orsayBody").innerText = texts[lang].orsayBody;
+    }
 
     function selectNav(section, event) {
       event.preventDefault();
-      policyContent.style.display = 'none';
-      orsayText.style.display = 'none';
-      navLinks.querySelectorAll('a').forEach(a => {
-        if ((section === 'onas' && a.id !== 'linkOnas') || (section === 'orsay' && a.id !== 'linkOrsay')) {
-          a.classList.add('hidden');
-        } else {
-          a.classList.add('shrink');
-        }
+      document.getElementById("policy").style.display = "none";
+      document.getElementById("orsayText").style.display = "none";
+      document.querySelectorAll("nav.nav-links a").forEach(a => {
+        a.classList.add("hidden");
       });
+      document.getElementById("btnBack").style.display = "inline-block";
 
-      if (section === 'onas') {
-        policyContent.style.display = 'block';
-      } else if (section === 'orsay') {
-        orsayText.style.display = 'block';
+      if (section === "onas") {
+        document.getElementById("policy").style.display = "block";
+      } else if (section === "orsay") {
+        document.getElementById("orsayText").style.display = "block";
       }
-
-      btnBack.style.display = 'inline-block';
     }
 
     function goBack() {
-      policyContent.style.display = 'none';
-      orsayText.style.display = 'none';
-      navLinks.querySelectorAll('a').forEach(a => {
-        a.classList.remove('hidden', 'shrink');
+      document.getElementById("policy").style.display = "none";
+      document.getElementById("orsayText").style.display = "none";
+      document.querySelectorAll("nav.nav-links a").forEach(a => {
+        a.classList.remove("hidden", "shrink");
       });
-      btnBack.style.display = 'none';
-    }
-
-    function selectLanguage(lang) {
-      alert('Wybrano język: ' + lang.toUpperCase());
+      document.getElementById("btnBack").style.display = "none";
     }
   </script>
 </body>
