@@ -12,24 +12,13 @@
       flex-direction: column;
       min-height: 100vh;
       justify-content: space-between;
-      background: url('https://audiomobileguides.com/modules/GreenKangooGuide/img/image-body-1.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #fff;
       color: #333;
       line-height: 1.6;
-      position: relative;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(6px);
-      z-index: -1;
     }
 
     .header-block {
       width: 100%;
-      z-index: 10;
     }
 
     .decor-line {
@@ -42,14 +31,13 @@
 
     .title-bar {
       width: 100%;
-      background-color: #f1cd17cc;
+      background-color: #f1cd17;
       text-align: center;
       padding: 10px 0;
       font-size: 32px;
       font-weight: 700;
       color: #000;
       margin: 0;
-      user-select: none;
     }
 
     nav.nav-links {
@@ -60,27 +48,18 @@
       padding: 0 20px;
       flex-wrap: wrap;
       transition: all 0.3s ease;
-      z-index: 10;
-      position: relative;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0 15px rgba(0,0,0,0.15);
     }
 
     nav.nav-links a {
       position: relative;
       font-size: 28px;
       font-weight: 600;
-      color: #d4b518;
+      color: #f1cd17;
       text-decoration: none;
       padding-bottom: 3px;
       cursor: pointer;
       transition: color 0.3s ease, font-size 0.3s ease;
       margin-top: 10px;
-      user-select: none;
     }
 
     nav.nav-links a.hidden {
@@ -90,7 +69,7 @@
     nav.nav-links a.shrink {
       font-size: 22px !important;
       pointer-events: none;
-      color: #a18f0b !important;
+      color: #d4b518 !important;
     }
 
     nav.nav-links a::after {
@@ -100,14 +79,13 @@
       bottom: 0;
       width: 0%;
       height: 2px;
-      background-color: #d4b518;
+      background-color: #f1cd17;
       transition: width 0.3s ease;
-      border-radius: 2px;
     }
 
     nav.nav-links a:hover,
     nav.nav-links a:focus {
-      color: #a18f0b;
+      color: #d4b518;
     }
 
     nav.nav-links a:hover::after,
@@ -118,15 +96,11 @@
     .policy-content,
     .orsay-content {
       max-width: 900px;
-      margin: 20px auto 40px auto;
-      padding: 20px 30px;
+      margin: 0 auto 30px auto;
+      padding: 0 20px 20px 20px;
       font-size: 16px;
-      color: #111;
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 14px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      color: #333;
       display: none;
-      user-select: text;
     }
 
     .policy-content h2,
@@ -135,8 +109,7 @@
       font-size: 28px;
       margin-bottom: 20px;
       font-weight: 700;
-      color: #222;
-      user-select: text;
+      color: #000;
     }
 
     .policy-content h3 {
@@ -145,13 +118,11 @@
       margin-bottom: 10px;
       font-weight: 700;
       color: #d4b518;
-      user-select: text;
     }
 
     .policy-content p,
     .orsay-content p {
       margin: 8px 0;
-      user-select: text;
     }
 
     .policy-content p strong {
@@ -161,7 +132,6 @@
     .policy-content a {
       color: #d4b518;
       text-decoration: none;
-      cursor: pointer;
     }
 
     .policy-content a:hover,
@@ -177,12 +147,9 @@
       flex-wrap: wrap;
       position: sticky;
       bottom: 0;
-      background: rgba(255, 255, 255, 0.95);
+      background: white;
       align-items: center;
       border-top: 1px solid #ddd;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
-      user-select: none;
-      z-index: 10;
     }
 
     .languages button {
@@ -193,9 +160,8 @@
       background: #f1cd17;
       border-radius: 4px;
       font-weight: 600;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s ease;
       color: black;
-      user-select: none;
     }
 
     .languages button:hover {
@@ -230,7 +196,6 @@
 
       nav.nav-links a {
         margin-top: 15px;
-        font-size: 22px;
       }
 
       .languages {
@@ -246,20 +211,20 @@
   </style>
 </head>
 <body>
-  <div class="header-block" role="banner" aria-label="Nagłówek strony">
+  <div class="header-block">
     <div class="decor-line"></div>
     <h1 class="title-bar">AUDIO-Mobile-Guides</h1>
     <div class="decor-line"></div>
   </div>
 
-  <nav class="nav-links" id="navLinks" role="navigation" aria-label="Menu główne">
-    <a href="#" id="linkOnas" onclick="selectNav('onas', event)" role="link" aria-controls="policy" aria-expanded="false" tabindex="0">O nas</a>
-    <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)" role="link" aria-controls="orsayText" aria-expanded="false" tabindex="0">Musée d'Orsay</a>
-    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore" role="link" tabindex="0">Przejdź do AppStore</a>
-    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay" role="link" tabindex="0">Przejdź do Google Play</a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#" id="linkOnas" onclick="selectNav('onas', event)">O nas</a>
+    <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)">Musée d'Orsay</a>
+    <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
+    <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
   </nav>
 
-  <div class="policy-content" id="policy" role="region" aria-live="polite" aria-hidden="true" tabindex="-1">
+  <div class="policy-content" id="policy">
     <h2>Polityka prywatności aplikacji AUDIO-Mobile-Guides</h2>
     <h3>1. Definicje</h3>
     <p><strong>Administrator</strong> – podmiot, który ustala cele i sposoby przetwarzania Twoich Danych osobowych;</p>
@@ -285,7 +250,7 @@
     <p>Kontakt: <a href="mailto:we@audiomobileguides.com">we@audiomobileguides.com</a></p>
   </div>
 
-  <div class="orsay-content" id="orsayText" role="region" aria-live="polite" aria-hidden="true" tabindex="-1">
+  <div class="orsay-content" id="orsayText">
     <h2>Musée d'Orsay – przewodnik audio</h2>
     <p>
       Wyobraź sobie spacer korytarzami przebudowanego dworca kolejowego, podczas którego Twój audio-przewodnik przeniesie Cię do umysłów Van Gogha, Degasa, Moneta. Usłyszysz historie stojące za arcydziełami sztuki, poczujesz pasję artystów i odkryjesz ukryte szczegóły, których inaczej byś nie zauważył.
@@ -298,51 +263,55 @@
     </p>
   </div>
 
-  <div class="languages" role="region" aria-label="Wybór języka">
-    <button id="btnPl" onclick="selectLanguage('pl')" aria-label="Wybierz język polski">Polski</button>
-    <button id="btnEn" onclick="selectLanguage('en')" aria-label="Wybierz język angielski">Angielski</button>
-    <button id="btnDe" onclick="selectLanguage('de')" aria-label="Wybierz język niemiecki">Niemiecki</button>
-    <button id="btnFr" onclick="selectLanguage('fr')" aria-label="Wybierz język francuski">Francuski</button>
-    <button class="back-button" id="btnBack" onclick="goBack()" style="display:none;" aria-hidden="true">Wróć</button>
+  <div class="languages">
+    <button id="btnPl" onclick="selectLanguage('pl')">Polski</button>
+    <button id="btnEn" onclick="selectLanguage('en')">Angielski</button>
+    <button id="btnDe" onclick="selectLanguage('de')">Niemiecki</button>
+    <button id="btnFr" onclick="selectLanguage('fr')">Francuski</button>
+    <button class="back-button" id="btnBack" onclick="goBack()" style="display:none;">Wróć</button>
   </div>
 
   <script>
     const policyContent = document.getElementById('policy');
     const orsayText = document.getElementById('orsayText');
+    const navLinks = document.getElementById('navLinks');
     const linkOnas = document.getElementById('linkOnas');
     const linkOrsay = document.getElementById('linkOrsay');
     const btnBack = document.getElementById('btnBack');
 
     function selectNav(section, event) {
       event.preventDefault();
-      if(section === 'onas') {
-        policyContent.style.display = 'block';
-        policyContent.setAttribute('aria-hidden', 'false');
-        policyContent.focus();
-        orsayText.style.display = 'none';
-        orsayText.setAttribute('aria-hidden', 'true');
-        linkOnas.setAttribute('aria-expanded', 'true');
-        linkOrsay.setAttribute('aria-expanded', 'false');
-      } else if(section === 'orsay') {
-        orsayText.style.display = 'block';
-        orsayText.setAttribute('aria-hidden', 'false');
-        orsayText.focus();
-        policyContent.style.display = 'none';
-        policyContent.setAttribute('aria-hidden', 'true');
-        linkOrsay.setAttribute('aria-expanded', 'true');
-        linkOnas.setAttribute('aria-expanded', 'false');
-      }
-    }
+      policyContent.style.display = 'none';
+      orsayText.style.display = 'none';
+      navLinks.querySelectorAll('a').forEach(a => {
+        if ((section === 'onas' && a.id !== 'linkOnas') || (section === 'orsay' && a.id !== 'linkOrsay')) {
+          a.classList.add('hidden');
+        } else {
+          a.classList.add('shrink');
+        }
+      });
 
-    function selectLanguage(lang) {
-      alert(`Wybrano język: ${lang.toUpperCase()}. Funkcjonalność tłumaczenia jest w trakcie implementacji.`);
+      if (section === 'onas') {
+        policyContent.style.display = 'block';
+      } else if (section === 'orsay') {
+        orsayText.style.display = 'block';
+      }
+
+      btnBack.style.display = 'inline-block';
     }
 
     function goBack() {
-      alert('Funkcjonalność powrotu jest w trakcie implementacji.');
+      policyContent.style.display = 'none';
+      orsayText.style.display = 'none';
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.classList.remove('hidden', 'shrink');
+      });
+      btnBack.style.display = 'none';
     }
 
-    selectNav('onas', new Event('load'));
+    function selectLanguage(lang) {
+      alert('Wybrano język: ' + lang.toUpperCase());
+    }
   </script>
 </body>
 </html>
