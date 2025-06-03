@@ -184,6 +184,22 @@
       background-color: #555;
       color: #fff;
     }
+    .orsay-logos {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+    .orsay-logos img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+    .orsay-logos img:hover {
+      filter: none;
+    }
     @media screen and (max-width: 600px) {
       nav.nav-links {
         flex-direction: column;
@@ -209,7 +225,7 @@
   </div>
 
   <nav class="nav-links" id="navLinks">
-    <a href="#" id="linkOnas" onclick="selectNav('onas', event)" style="display:none;">O nas</a>
+    <a href="#" id="linkOnas" onclick="selectNav('onas', event)">O nas</a>
     <a href="#" id="linkOrsay" onclick="selectNav('orsay', event)">Musée d'Orsay</a>
     <a href="https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone" target="_blank" rel="noopener noreferrer" id="linkAppStore">Przejdź do AppStore</a>
     <a href="https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl" target="_blank" rel="noopener noreferrer" id="linkGooglePlay">Przejdź do Google Play</a>
@@ -226,316 +242,131 @@
 
   <div class="orsay-content" id="orsay">
     <h2 id="orsayTitle">Musée d'Orsay</h2>
+    <div id="privacyTableAbove6"></div> <!-- Tu przeniesiona tabelka -->
     <p id="orsayText"></p>
+    <div class="orsay-logos" id="orsayLogos" style="display:none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" id="fbLogo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="AppStore" id="appStoreLogo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" id="googlePlayLogo" style="width: 100px; height: auto;" />
+    </div>
   </div>
 
-  <div class="languages">
-    <button id="plButton" onclick="changeLanguage('pl')">Polski</button>
-    <button id="enButton" onclick="changeLanguage('en')">English</button>
-    <button id="deButton" onclick="changeLanguage('de')">Deutsch</button>
-    <button id="bgButton" onclick="changeLanguage('bg')">Български</button>
-    <button id="esButton" onclick="changeLanguage('es')">Español</button>
-    <button id="uaButton" onclick="changeLanguage('ua')">Українська</button>
-    <button class="back-button" id="backButton" onclick="goBack()" style="display:none;">Wróć</button>
+  <div class="languages" id="languages">
+    <button id="btn-pl" aria-label="Polski">PL</button>
+    <button id="btn-en" aria-label="English">EN</button>
+    <button id="btn-de" aria-label="Deutsch">DE</button>
+    <button id="btn-ru" aria-label="Русский">RU</button>
+    <button class="back-button" id="btn-back" style="display:none;">Back</button>
   </div>
 
   <script>
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const policy = document.getElementById('policy');
-    const policyBody = document.getElementById('policyBody');
-    const policyTitle = document.getElementById('policyTitle');
-    const orsay = document.getElementById('orsay');
-    const orsayText = document.getElementById('orsayText');
-    const backButton = document.getElementById('backButton');
-    const pageTitle = document.getElementById('pageTitle');
-    const linkOnas = document.getElementById('linkOnas');
-    const linkOrsay = document.getElementById('linkOrsay');
+    // Dane tekstów i treści polityki
+    const privacyTableHTML = `
+      <table class="privacy-table">
+        <thead>
+          <tr><th>Element</th><th>Opis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dane osobowe</td><td>Nie zbieramy danych osobowych użytkowników.</td></tr>
+          <tr><td>Cookies</td><td>Brak użycia cookies.</td></tr>
+          <tr><td>Logowanie</td><td>Nie wymagamy logowania.</td></tr>
+        </tbody>
+      </table>
+    `;
 
-    // Texts in different languages
-    const texts = {
-      pl: {
-        nav: {
-          onas: "O nas",
-          orsay: "Musée d'Orsay",
-          appstore: "Przejdź do AppStore",
-          googleplay: "Przejdź do Google Play"
-        },
-        policyTitle: "Polityka prywatności aplikacji AUDIO-Mobile-Guides",
-        policyBody: `
-<p>AUDIO-Mobile-Guides to aplikacja stworzona, aby zapewnić Państwu komfort podczas zwiedzania muzeów.</p>
+    const policyTextBefore6 = privacyTableHTML + `
+      <p>6. Twoje dane przechowujemy przez okres niezbędny do realizacji celów, dla których zostały zebrane, lub zgodnie z wymogami prawnymi.</p>
+    `;
 
-<h3>Przetwarzanie danych osobowych</h3>
-<p>Nasza aplikacja nie wymaga logowania ani podawania danych osobowych. Nie zbieramy danych użytkowników.</p>
+    const orsayText = `Wyobraź sobie spacer korytarzami przebudowanego dworca kolejowego, podczas którego Twój audio-przewodnik przeniesie Cię do umysłów Van Gogha, Degasa, Moneta. Usłyszysz historie stojące za arcydziełami sztuki, poczujesz pasję artystów i odkryjesz ukryte szczegóły, których inaczej byś nie zauważył. Doświadczysz atmosfery wolności ekspresji i nowego spojrzenia na rzeczywistość, które uczyniły ówczesny Paryż stolicą nowoczesnej sztuki. Z tą aplikacją obrazy stają się rozmową, a nie tylko wizualną ucztą dla oka. To koniec z nudnymi tabliczkami, bezimiennymi twarzami, scenami, które ukazują nieznane wydarzenia. Więc, gdy będziesz w Paryżu, uruchom aplikację i pozwól Muzeum d'Orsay szepnąć Ci swoje sekrety. Gotowy do podróży w czasie?!!!
 
-<h3>Cookies</h3>
-<p>Aplikacja nie używa cookies ani innych mechanizmów śledzenia.</p>
+Zainstaluj aplikację AUDIO-Mobile-Guides i rozpocznij swoją podróż już dziś!`;
 
-<h3>Kontakt</h3>
-<p>W przypadku pytań prosimy o kontakt pod adresem email: kontakt@audiomobileguides.com</p>
+    // Inicjalizacja wyświetlania - domyślnie nie pokazujemy sekcji, pokazujemy tylko obraz i menu
+    const policySection = document.getElementById('policy');
+    const orsaySection = document.getElementById('orsay');
+    const imageContainer = document.getElementById('imageContainer');
 
-<table class="privacy-table">
-  <thead>
-    <tr><th>Element</th><th>Opis</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Dane osobowe</td><td>Nie zbieramy danych osobowych użytkowników.</td></tr>
-    <tr><td>Cookies</td><td>Brak użycia cookies.</td></tr>
-    <tr><td>Logowanie</td><td>Nie wymagamy logowania.</td></tr>
-  </tbody>
-</table>
-        `,
-        orsayTitle: "Musée d'Orsay",
-        orsayText: "Muzeum Musée d'Orsay to znane na całym świecie muzeum sztuki w Paryżu, oferujące bogate zbiory impresjonizmu i sztuki współczesnej."
-      },
-      en: {
-        nav: {
-          onas: "About Us",
-          orsay: "Musée d'Orsay",
-          appstore: "Go to AppStore",
-          googleplay: "Go to Google Play"
-        },
-        policyTitle: "Privacy Policy of AUDIO-Mobile-Guides app",
-        policyBody: `
-<p>AUDIO-Mobile-Guides is an application created to ensure your comfort while visiting museums.</p>
+    // Wstawiamy zawartość polityki
+    document.getElementById('policyBody').innerHTML = `
+      ${privacyTableHTML}
+      <p>6. Twoje dane przechowujemy przez okres niezbędny do realizacji celów, dla których zostały zebrane, lub zgodnie z wymogami prawnymi.</p>
+    `;
 
-<h3>Personal Data Processing</h3>
-<p>Our application does not require login or personal data submission. We do not collect user data.</p>
+    // Ustawiamy tekst Musée d'Orsay
+    document.getElementById('orsayText').textContent = orsayText;
 
-<h3>Cookies</h3>
-<p>The application does not use cookies or other tracking mechanisms.</p>
+    // Przeniesiona tabelka w O nas sekcji przed punkt 6 (dla Twojej wygody tutaj - ale sekcja O nas jest policy)
+    // Już powyżej w policyBody tabelka jest na początku, więc nie trzeba duplikować
 
-<h3>Contact</h3>
-<p>For inquiries, please contact us at email: contact@audiomobileguides.com</p>
+    // Linki w orsay-logos
+    const fbLogo = document.querySelector('#orsayLogos img[alt="Facebook"]');
+    fbLogo.style.cursor = 'pointer';
+    fbLogo.addEventListener('click', () => {
+      window.open('https://www.facebook.com/audiomobileguides', '_blank', 'noopener');
+    });
 
-<table class="privacy-table">
-  <thead>
-    <tr><th>Item</th><th>Description</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Personal Data</td><td>We do not collect personal data from users.</td></tr>
-    <tr><td>Cookies</td><td>No use of cookies.</td></tr>
-    <tr><td>Login</td><td>Login is not required.</td></tr>
-  </tbody>
-</table>
-        `,
-        orsayTitle: "Musée d'Orsay",
-        orsayText: "The Musée d'Orsay is a world-renowned art museum in Paris, featuring rich collections of Impressionism and contemporary art."
-      },
-      de: {
-        nav: {
-          onas: "Über uns",
-          orsay: "Musée d'Orsay",
-          appstore: "Zum AppStore",
-          googleplay: "Zum Google Play"
-        },
-        policyTitle: "Datenschutzerklärung der AUDIO-Mobile-Guides-App",
-        policyBody: `
-<p>AUDIO-Mobile-Guides ist eine Anwendung, die geschaffen wurde, um Ihren Komfort beim Besuch von Museen zu gewährleisten.</p>
+    const appStoreLogo = document.querySelector('#orsayLogos img[alt="AppStore"]');
+    appStoreLogo.style.cursor = 'pointer';
+    appStoreLogo.addEventListener('click', () => {
+      window.open('https://apps.apple.com/us/app/mus%C3%A9e-dorsay-audioguide/id6738750516?platform=iphone', '_blank', 'noopener');
+    });
 
-<h3>Verarbeitung personenbezogener Daten</h3>
-<p>Unsere Anwendung erfordert keine Anmeldung oder Eingabe persönlicher Daten. Wir sammeln keine Benutzerdaten.</p>
+    const googlePlayLogo = document.querySelector('#orsayLogos img[alt="Google Play"]');
+    googlePlayLogo.style.cursor = 'pointer';
+    googlePlayLogo.addEventListener('click', () => {
+      window.open('https://play.google.com/store/apps/details?id=com.audiomobileguides.dorsaypl', '_blank', 'noopener');
+    });
 
-<h3>Cookies</h3>
-<p>Die Anwendung verwendet keine Cookies oder andere Tracking-Mechanismen.</p>
-
-<h3>Kontakt</h3>
-<p>Bei Fragen kontaktieren Sie uns bitte per E-Mail: kontakt@audiomobileguides.com</p>
-
-<table class="privacy-table">
-  <thead>
-    <tr><th>Element</th><th>Beschreibung</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Personenbezogene Daten</td><td>Wir sammeln keine personenbezogenen Daten der Benutzer.</td></tr>
-    <tr><td>Cookies</td><td>Keine Verwendung von Cookies.</td></tr>
-    <tr><td>Anmeldung</td><td>Anmeldung ist nicht erforderlich.</td></tr>
-  </tbody>
-</table>
-        `,
-        orsayTitle: "Musée d'Orsay",
-        orsayText: "Das Musée d'Orsay ist ein weltweit bekanntes Kunstmuseum in Paris mit einer umfangreichen Sammlung von Impressionismus und zeitgenössischer Kunst."
-      },
-      bg: {
-        nav: {
-          onas: "За нас",
-          orsay: "Музей Орсе",
-          appstore: "Отидете в AppStore",
-          googleplay: "Отидете в Google Play"
-        },
-        policyTitle: "Политика за поверителност на приложението AUDIO-Mobile-Guides",
-        policyBody: `
-<p>AUDIO-Mobile-Guides е приложение, създадено да осигури комфорт при посещение на музеи.</p>
-
-<h3>Обработка на лични данни</h3>
-<p>Нашето приложение не изисква регистрация или предоставяне на лични данни. Не събираме потребителски данни.</p>
-
-<h3>Бисквитки (Cookies)</h3>
-<p>Приложението не използва бисквитки или други механизми за проследяване.</p>
-
-<h3>Контакт</h3>
-<p>За въпроси, моля свържете се с нас на имейл: kontakt@audiomobileguides.com</p>
-
-<table class="privacy-table">
-  <thead>
-    <tr><th>Елемент</th><th>Описание</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Лични данни</td><td>Не събираме лични данни от потребителите.</td></tr>
-    <tr><td>Бисквитки</td><td>Без използване на бисквитки.</td></tr>
-    <tr><td>Влизане</td><td>Не се изисква влизане.</td></tr>
-  </tbody>
-</table>
-        `,
-        orsayTitle: "Музей Орсе",
-        orsayText: "Музеят Musée d'Orsay е световноизвестен художествен музей в Париж, предлагащ богати колекции от импресионизъм и съвременно изкуство."
-      },
-      es: {
-        nav: {
-          onas: "Sobre nosotros",
-          orsay: "Musée d'Orsay",
-          appstore: "Ir a AppStore",
-          googleplay: "Ir a Google Play"
-        },
-        policyTitle: "Política de privacidad de la aplicación AUDIO-Mobile-Guides",
-        policyBody: `
-<p>AUDIO-Mobile-Guides es una aplicación creada para garantizar su comodidad durante la visita a museos.</p>
-
-<h3>Procesamiento de datos personales</h3>
-<p>Nuestra aplicación no requiere inicio de sesión ni envío de datos personales. No recopilamos datos de usuarios.</p>
-
-<h3>Cookies</h3>
-<p>La aplicación no utiliza cookies ni otros mecanismos de seguimiento.</p>
-
-<h3>Contacto</h3>
-<p>Para consultas, por favor contacte al correo electrónico: contacto@audiomobileguides.com</p>
-
-<table class="privacy-table">
-  <thead>
-    <tr><th>Elemento</th><th>Descripción</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Datos personales</td><td>No recopilamos datos personales de los usuarios.</td></tr>
-    <tr><td>Cookies</td><td>No se utilizan cookies.</td></tr>
-    <tr><td>Inicio de sesión</td><td>No se requiere inicio de sesión.</td></tr>
-  </tbody>
-</table>
-        `,
-        orsayTitle: "Musée d'Orsay",
-        orsayText: "El Musée d'Orsay es un museo de arte de renombre mundial en París, que ofrece ricas colecciones de impresionismo y arte contemporáneo."
-      },
-      ua: {
-        nav: {
-          onas: "Про нас",
-          orsay: "Музей Орсе",
-          appstore: "Перейти до AppStore",
-          googleplay: "Перейти до Google Play"
-        },
-        policyTitle: "Політика конфіденційності додатку AUDIO-Mobile-Guides",
-        policyBody: `
-<p>AUDIO-Mobile-Guides — це додаток, створений для забезпечення комфортного відвідування музеїв.</p>
-
-<h3>Обробка персональних даних</h3>
-<p>Наш додаток не вимагає входу в систему або надання персональних даних. Ми не збираємо дані користувачів.</p>
-
-<h3>Cookies</h3>
-<p>Додаток не використовує cookies або інші механізми відстеження.</p>
-
-<h3>Контакт</h3>
-<p>З питань звертайтесь за адресою електронної пошти: kontakt@audiomobileguides.com</p>
-
-<table class="privacy-table">
-  <thead>
-    <tr><th>Елемент</th><th>Опис</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Персональні дані</td><td>Ми не збираємо персональні дані користувачів.</td></tr>
-    <tr><td>Cookies</td><td>Відсутнє використання cookies.</td></tr>
-    <tr><td>Вхід</td><td>Вхід не потрібен.</td></tr>
-  </tbody>
-</table>
-        `,
-        orsayTitle: "Музей Орсе",
-        orsayText: "Музей Musée d'Orsay — всесвітньо відомий художній музей у Парижі, що пропонує багаті колекції імпресіонізму та сучасного мистецтва."
-      }
-    };
-
-    let currentLang = 'pl';
-    let currentNav = null; // 'onas' or 'orsay'
-
-    // Show/hide navigation links for 'O nas' and other
-    function updateNavVisibility() {
-      if (currentNav === 'onas') {
-        linkOnas.style.display = 'none';
-        linkOrsay.style.display = 'none';
-      } else {
-        linkOnas.style.display = texts[currentLang].nav.onas ? 'inline-block' : 'none';
-        linkOrsay.style.display = 'inline-block';
-      }
-    }
-
-    function selectNav(name, event) {
+    function selectNav(section, event) {
       event.preventDefault();
-      currentNav = name;
 
-      if (name === 'onas') {
-        // Show policy content
-        policy.style.display = 'block';
-        orsay.style.display = 'none';
-        backButton.style.display = 'inline-block';
-        pageTitle.textContent = texts[currentLang].nav.onas;
-        updateNavVisibility();
-      } else if (name === 'orsay') {
-        orsay.style.display = 'block';
-        policy.style.display = 'none';
-        backButton.style.display = 'inline-block';
-        pageTitle.textContent = texts[currentLang].nav.orsay;
-        updateNavVisibility();
+      // Nagłówek zawsze AUDIO-Mobile-Guides
+      document.getElementById('pageTitle').textContent = 'AUDIO-Mobile-Guides';
+
+      // Ukryj obrazek przy kliknięciu O nas lub Musée d'Orsay
+      imageContainer.style.display = 'none';
+
+      // Pokazywanie odpowiedniej sekcji
+      if(section === 'onas') {
+        policySection.style.display = 'block';
+        orsaySection.style.display = 'none';
+      } else if(section === 'orsay') {
+        policySection.style.display = 'none';
+        orsaySection.style.display = 'block';
+        document.getElementById('orsayLogos').style.display = 'flex';
       }
     }
 
-    function goBack() {
-      currentNav = null;
-      policy.style.display = 'none';
-      orsay.style.display = 'none';
-      backButton.style.display = 'none';
-      pageTitle.textContent = "AUDIO-Mobile-Guides";
-      updateNavVisibility();
-    }
+    // Początkowe ustawienia widoczności linków i elementów
+    document.getElementById('linkOnas').style.display = 'inline-block';
+    document.getElementById('linkOrsay').style.display = 'inline-block';
 
-    function changeLanguage(lang) {
-      currentLang = lang;
-      // Update nav link texts
-      linkOnas.textContent = texts[lang].nav.onas;
-      linkOrsay.textContent = texts[lang].nav.orsay;
-      document.getElementById('linkAppStore').textContent = texts[lang].nav.appstore;
-      document.getElementById('linkGooglePlay').textContent = texts[lang].nav.googleplay;
+    // Początkowo ukrywamy sekcje polityki i orsay
+    policySection.style.display = 'none';
+    orsaySection.style.display = 'none';
 
-      // Update policy and orsay titles and texts
-      policyTitle.textContent = texts[lang].policyTitle;
-      policyBody.innerHTML = texts[lang].policyBody;
-
-      orsayTitle.textContent = texts[lang].orsayTitle;
-      orsayText.textContent = texts[lang].orsayText;
-
-      // If currently showing 'onas' or 'orsay', update title accordingly
-      if (currentNav === 'onas') {
-        pageTitle.textContent = texts[lang].nav.onas;
-      } else if (currentNav === 'orsay') {
-        pageTitle.textContent = texts[lang].nav.orsay;
-      } else {
-        pageTitle.textContent = "AUDIO-Mobile-Guides";
-      }
-
-      updateNavVisibility();
-    }
-
-    // Initial setup
-    window.onload = () => {
-      // Show or hide nav links based on default state
-      updateNavVisibility();
-      // Set initial language content
-      changeLanguage(currentLang);
-    };
+    // Języki - tymczasowo nie zmieniamy tekstów (można rozbudować później)
+    const btnPL = document.getElementById('btn-pl');
+    btnPL.addEventListener('click', () => {
+      alert('Wybrano język Polski.');
+    });
+    const btnEN = document.getElementById('btn-en');
+    btnEN.addEventListener('click', () => {
+      alert('Selected English language.');
+    });
+    const btnDE = document.getElementById('btn-de');
+    btnDE.addEventListener('click', () => {
+      alert('Deutsch Sprache ausgewählt.');
+    });
+    const btnRU = document.getElementById('btn-ru');
+    btnRU.addEventListener('click', () => {
+      alert('Выбран русский язык.');
+    });
+    const btnBack = document.getElementById('btn-back');
+    btnBack.addEventListener('click', () => {
+      alert('Back button clicked.');
+    });
   </script>
 </body>
 </html>
